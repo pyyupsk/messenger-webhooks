@@ -1,15 +1,24 @@
 ---
 title: Events
-description: Manage Message, Postback, Quick Reply, and more events with @pyyupsk/messenger-webhooks library.
+description:
+  Manage Message, Postback, Quick Reply, and more events with
+  @pyyupsk/messenger-webhooks library.
 ---
 
-The [`@pyyupsk/messenger-webhooks`](https://www.npmjs.com/package/@pyyupsk/messenger-webhooks) library provides a robust mechanism for handling different types of events that occur on [Facebook Messenger](https://developers.facebook.com/docs/messenger-platform/reference/webhook-events/). When users interact with your Messenger bot, various events are triggered, and your bot can respond to these events using the library’s event handling system.
+The
+[`@pyyupsk/messenger-webhooks`](https://www.npmjs.com/package/@pyyupsk/messenger-webhooks)
+library provides a robust mechanism for handling different types of events that
+occur on
+[Facebook Messenger](https://developers.facebook.com/docs/messenger-platform/reference/webhook-events/).
+When users interact with your Messenger bot, various events are triggered, and
+your bot can respond to these events using the library’s event handling system.
 
 ## Event Handling
 
 ### Event Types
 
-The library can handle several types of events, each representing different interactions or messages from users. The event types supported are:
+The library can handle several types of events, each representing different
+interactions or messages from users. The event types supported are:
 
 - **Message**: Represents a message sent by the user.
 - **Quick Reply**: Represents a quick reply button click.
@@ -20,7 +29,8 @@ The library can handle several types of events, each representing different inte
 
 ### Event Structure
 
-Each event type extends the base `WebhookEvent` interface, which includes common properties:
+Each event type extends the base `WebhookEvent` interface, which includes common
+properties:
 
 ```typescript
 export interface WebhookEvent {
@@ -44,7 +54,8 @@ Here are the specific interfaces for each event type:
 
 #### Message Event
 
-Represents a message sent by the user. May include a quick reply and echo payload.
+Represents a message sent by the user. May include a quick reply and echo
+payload.
 
 ```typescript
 export interface MessageEvent extends WebhookEvent {
@@ -77,7 +88,8 @@ export interface QuickReplyEvent extends WebhookEvent {
 
 #### Echo Event
 
-Represents a message sent by the user. May include a quick reply and echo payload.
+Represents a message sent by the user. May include a quick reply and echo
+payload.
 
 ```typescript
 export interface EchoesEvent extends WebhookEvent {
@@ -132,7 +144,8 @@ export interface ReferralsEvent extends WebhookEvent {
 
 ### Handling Events in the Bot
 
-The `Bot` class emits events based on the event type determined by the `determineEventType` function. Here’s how you can handle events in your bot:
+The `Bot` class emits events based on the event type determined by the
+`determineEventType` function. Here’s how you can handle events in your bot:
 
 ```typescript
 import {
@@ -177,6 +190,8 @@ bot.on('referral', async (event: ReferralsEvent) => {
 bot.start();
 ```
 
-In this setup, the bot listens for different event types and executes the appropriate handler for each event type.
+In this setup, the bot listens for different event types and executes the
+appropriate handler for each event type.
 
-By understanding and utilizing these event types and handlers, you can create dynamic and interactive Messenger bots that respond to user actions effectively.
+By understanding and utilizing these event types and handlers, you can create
+dynamic and interactive Messenger bots that respond to user actions effectively.

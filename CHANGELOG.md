@@ -10,7 +10,8 @@
 
 ### Patch Changes
 
-- Refactored project structure, moved tests to separate package, updated dependencies and configurations
+- Refactored project structure, moved tests to separate package, updated
+  dependencies and configurations
 
 ## 1.1.1
 

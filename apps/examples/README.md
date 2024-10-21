@@ -1,6 +1,8 @@
 # Weather Bot Example
 
-This is a simple weather bot example using the `@pyyupsk/messenger-webhooks` library. The bot responds to user messages with weather information for the specified city.
+This is a simple weather bot example using the `@pyyupsk/messenger-webhooks`
+library. The bot responds to user messages with weather information for the
+specified city.
 
 ## Setup
 
@@ -40,4 +42,5 @@ To run the bot in development mode with hot reloading:
 npm run dev
 ```
 
-This will start the bot with hot reloading, allowing you to make changes to the code and see them take effect without restarting the bot.
+This will start the bot with hot reloading, allowing you to make changes to the
+code and see them take effect without restarting the bot.
