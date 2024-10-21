@@ -1,9 +1,12 @@
 ---
 title: Postback Button
-description: Create Postback buttons in Messenger bots to trigger server actions with @pyyupsk/messenger-webhooks.
+description:
+  Create Postback buttons in Messenger bots to trigger server actions with
+  @pyyupsk/messenger-webhooks.
 ---
 
-The `PostbackButton` class creates a button that sends a payload to your server when clicked. This is useful for triggering server-side events or actions.
+The `PostbackButton` class creates a button that sends a payload to your server
+when clicked. This is useful for triggering server-side events or actions.
 
 ## Properties
 

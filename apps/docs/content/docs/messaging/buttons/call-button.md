@@ -1,9 +1,12 @@
 ---
 title: Call Button
-description: Add Call buttons to Messenger bots to let users call your business directly.
+description:
+  Add Call buttons to Messenger bots to let users call your business directly.
 ---
 
-The `CallButton` class creates a button that initiates a phone call when clicked. This button is useful for providing a quick way for users to contact your business directly.
+The `CallButton` class creates a button that initiates a phone call when
+clicked. This button is useful for providing a quick way for users to contact
+your business directly.
 
 ## Properties
 

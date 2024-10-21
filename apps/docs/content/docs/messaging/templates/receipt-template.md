@@ -1,24 +1,32 @@
 ---
 title: Receipt Template
-description: Create comprehensive receipt messages for purchases, featuring items, summaries, and order details.
+description:
+  Create comprehensive receipt messages for purchases, featuring items,
+  summaries, and order details.
 ---
 
-The `ReceiptTemplate` class is designed to create detailed receipt messages for users. It includes information such as the recipient's name, order details, and a list of purchased items. This template can also include adjustments and address information.
+The `ReceiptTemplate` class is designed to create detailed receipt messages for
+users. It includes information such as the recipient's name, order details, and
+a list of purchased items. This template can also include adjustments and
+address information.
 
 ## ReceiptElement
 
 ### Properties
 
 - **title**: The title or name of the receipt element (e.g., item name).
-- **subtitle** (optional): A secondary line of text providing more details about the element.
-- **quantity** (optional): The quantity of the item. This is useful for items that are purchased in bulk.
+- **subtitle** (optional): A secondary line of text providing more details about
+  the element.
+- **quantity** (optional): The quantity of the item. This is useful for items
+  that are purchased in bulk.
 - **price**: The price of the item.
 - **currency** (optional): The currency in which the price is specified.
 - **image_url** (optional): A URL to an image representing the item.
 
 ### Methods
 
-- **constructor(title: string, price: number)**: Initializes a new `ReceiptElement` with the specified title and price.
+- **constructor(title: string, price: number)**: Initializes a new
+  `ReceiptElement` with the specified title and price.
 
 - **setSubtitle(subtitle: string)**: Sets a subtitle for the `ReceiptElement`.
 
@@ -26,21 +34,25 @@ The `ReceiptTemplate` class is designed to create detailed receipt messages for 
 
 - **setCurrency(currency: string)**: Sets the currency for the `ReceiptElement`.
 
-- **setImageUrl(imageUrl: string)**: Sets the image URL for the `ReceiptElement`.
+- **setImageUrl(imageUrl: string)**: Sets the image URL for the
+  `ReceiptElement`.
 
 ## ReceiptTemplate
 
 ### Properties
 
-- **sharable** (optional): Whether the receipt template is sharable. Defaults to `false`.
+- **sharable** (optional): Whether the receipt template is sharable. Defaults to
+  `false`.
 
 - **recipient_name**: The name of the recipient of the receipt.
 
-- **merchant_name** (optional): The name of the merchant or store issuing the receipt.
+- **merchant_name** (optional): The name of the merchant or store issuing the
+  receipt.
 
 - **order_number**: The unique order number for the receipt.
 
-- **order_url** (optional): A URL where more information about the order can be found.
+- **order_url** (optional): A URL where more information about the order can be
+  found.
 
 - **currency**: The currency used for the transaction.
 
@@ -48,31 +60,43 @@ The `ReceiptTemplate` class is designed to create detailed receipt messages for 
 
 - **timestamp** (optional): The timestamp when the transaction occurred.
 
-- **elements**: An array of `ReceiptElement` instances, representing the items purchased.
+- **elements**: An array of `ReceiptElement` instances, representing the items
+  purchased.
 
-- **address** (optional): The address where the receipt is sent or the delivery address.
+- **address** (optional): The address where the receipt is sent or the delivery
+  address.
 
-- **summary**: A summary object containing the subtotal, shipping cost, total tax, and total cost.
+- **summary**: A summary object containing the subtotal, shipping cost, total
+  tax, and total cost.
 
-- **adjustments** (optional): An array of adjustments applied to the receipt, such as discounts or additional fees.
+- **adjustments** (optional): An array of adjustments applied to the receipt,
+  such as discounts or additional fees.
 
 ### Methods
 
-- **constructor(recipient_name: string, order_number: string, currency: string, payment_method: string, { sharable = false }: { sharable?: boolean } = {})**: Initializes a new `ReceiptTemplate` with the required information and optional sharable flag.
+- **constructor(recipient_name: string, order_number: string, currency: string,
+  payment_method: string, { sharable = false }: { sharable?: boolean } = {})**:
+  Initializes a new `ReceiptTemplate` with the required information and optional
+  sharable flag.
 
-- **setMerchantName(merchant_name: string)**: Sets the merchant name for the `ReceiptTemplate`.
+- **setMerchantName(merchant_name: string)**: Sets the merchant name for the
+  `ReceiptTemplate`.
 
-- **setOrderUrl(order_url: string)**: Sets the order URL for the `ReceiptTemplate`.
+- **setOrderUrl(order_url: string)**: Sets the order URL for the
+  `ReceiptTemplate`.
 
-- **setTimestamp(timestamp: number)**: Sets the timestamp for the `ReceiptTemplate`.
+- **setTimestamp(timestamp: number)**: Sets the timestamp for the
+  `ReceiptTemplate`.
 
 - **setAddress(address: Address)**: Sets the address for the `ReceiptTemplate`.
 
 - **setSummary(summary: Summary)**: Sets the summary for the `ReceiptTemplate`.
 
-- **addAdjustment(adjustment: Adjustment[])**: Adds an array of adjustments to the `ReceiptTemplate`.
+- **addAdjustment(adjustment: Adjustment[])**: Adds an array of adjustments to
+  the `ReceiptTemplate`.
 
-- **addElement(element: ReceiptElement[])**: Adds an array of `ReceiptElement` instances to the `ReceiptTemplate`. A maximum of 100 elements can be added.
+- **addElement(element: ReceiptElement[])**: Adds an array of `ReceiptElement`
+  instances to the `ReceiptTemplate`. A maximum of 100 elements can be added.
 
 ## Example Usage
 
@@ -84,11 +108,19 @@ const item1 = new ReceiptElement('Laptop', 999.99)
   .setCurrency('USD')
   .setImageUrl('https://example.com/laptop.jpg');
 
-const item2 = new ReceiptElement('Mouse', 25.0).setQuantity(2).setCurrency('USD');
+const item2 = new ReceiptElement('Mouse', 25.0)
+  .setQuantity(2)
+  .setCurrency('USD');
 
-const receipt = new ReceiptTemplate('John Doe', '1234567890', 'USD', 'Credit Card', {
-  sharable: true,
-})
+const receipt = new ReceiptTemplate(
+  'John Doe',
+  '1234567890',
+  'USD',
+  'Credit Card',
+  {
+    sharable: true,
+  },
+)
   .setMerchantName('Tech Store')
   .setOrderUrl('https://example.com/order/1234567890')
   .setTimestamp(Date.now())
@@ -167,6 +199,11 @@ const receipt = new ReceiptTemplate('John Doe', '1234567890', 'USD', 'Credit Car
 
 ## Additional Information
 
-The `ReceiptTemplate` class provides a comprehensive way to structure receipt messages for various applications, including order confirmations and purchase receipts. By including detailed elements, address information, and a summary, you can create a complete and informative receipt for your users.
+The `ReceiptTemplate` class provides a comprehensive way to structure receipt
+messages for various applications, including order confirmations and purchase
+receipts. By including detailed elements, address information, and a summary,
+you can create a complete and informative receipt for your users.
 
-For more details on integrating `ReceiptTemplate` into your messaging platform, refer to the platform’s documentation on receipt templates and interactive messages.
+For more details on integrating `ReceiptTemplate` into your messaging platform,
+refer to the platform’s documentation on receipt templates and interactive
+messages.

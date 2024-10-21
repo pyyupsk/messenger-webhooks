@@ -1,10 +1,12 @@
 # Contributing to @pyyupsk/messenger-webhooks
 
-We welcome contributions to the `@pyyupsk/messenger-webhooks` project! This document provides guidelines for contributing to the project.
+We welcome contributions to the `@pyyupsk/messenger-webhooks` project! This
+document provides guidelines for contributing to the project.
 
 ## Code of Conduct
 
-By participating in this project, you are expected to uphold our Code of Conduct (to be added).
+By participating in this project, you are expected to uphold our Code of Conduct
+(to be added).
 
 ## How to Contribute
 
@@ -32,12 +34,14 @@ By participating in this project, you are expected to uphold our Code of Conduct
 ## Coding Standards
 
 - We use ESLint for linting. Run `npm run lint` to check your code.
-- We use Prettier for code formatting. Run `npm run format:fix` to format your code.
+- We use Prettier for code formatting. Run `npm run format:fix` to format your
+  code.
 - Write clear, readable, and well-documented code.
 
 ## Commit Messages
 
-Follow the [Conventional Commits](https://www.conventionalcommits.org/) specification for commit messages.
+Follow the [Conventional Commits](https://www.conventionalcommits.org/)
+specification for commit messages.
 
 ## Testing
 
@@ -53,11 +57,14 @@ Follow the [Conventional Commits](https://www.conventionalcommits.org/) specific
 
 1. Ensure your code adheres to the coding standards.
 2. Update the README.md with details of changes to the interface, if applicable.
-3. Increase the version numbers in any examples files and the README.md to the new version that this Pull Request would represent.
-4. Your pull request will be reviewed by maintainers, who may request changes or ask questions.
+3. Increase the version numbers in any examples files and the README.md to the
+   new version that this Pull Request would represent.
+4. Your pull request will be reviewed by maintainers, who may request changes or
+   ask questions.
 
 ## Questions?
 
-If you have any questions, please open an issue or contact the project maintainers.
+If you have any questions, please open an issue or contact the project
+maintainers.
 
 Thank you for contributing to `@pyyupsk/messenger-webhooks`!

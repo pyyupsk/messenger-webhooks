@@ -1,9 +1,15 @@
 ---
 title: Messaging
-description: Use @pyyupsk/messenger-webhooks library to send text, images, audio, videos, files, and templates on Messenger.
+description:
+  Use @pyyupsk/messenger-webhooks library to send text, images, audio, videos,
+  files, and templates on Messenger.
 ---
 
-To send messages to a user on Messenger, the conversation must be initiated by that user. The [`@pyyupsk/messenger-webhooks`](https://www.npmjs.com/package/@pyyupsk/messenger-webhooks) library provides the `sendMessage` method for sending different types of messages, each with its own content and structure.
+To send messages to a user on Messenger, the conversation must be initiated by
+that user. The
+[`@pyyupsk/messenger-webhooks`](https://www.npmjs.com/package/@pyyupsk/messenger-webhooks)
+library provides the `sendMessage` method for sending different types of
+messages, each with its own content and structure.
 
 ## Content Types
 
@@ -18,7 +24,8 @@ The `sendMessage` method supports several types of content, including:
 
 ### Sending Messages
 
-All messages are sent using the `sendMessage` method in the `Bot` class. Here is an example of how to send a message using a template:
+All messages are sent using the `sendMessage` method in the `Bot` class. Here is
+an example of how to send a message using a template:
 
 #### Example: Sending a Generic Template
 
@@ -52,14 +59,18 @@ const element2 = new GenericElement('Product 2')
     new PostbackButton('Buy Now', 'BUY_PRODUCT_2'),
   ]);
 
-const genericTemplate = new GenericTemplate({ sharable: true }).addElement([element1, element2]);
+const genericTemplate = new GenericTemplate({ sharable: true }).addElement([
+  element1,
+  element2,
+]);
 
 bot.sendMessage(recipientId, genericTemplate);
 ```
 
 ### JSON Representation
 
-The `sendMessage` method constructs the following JSON payload for the above example:
+The `sendMessage` method constructs the following JSON payload for the above
+example:
 
 ```json
 {
@@ -112,6 +123,9 @@ bot.sendAttachment(recipientId, 'file', 'https://example.com/file.pdf');
 
 #### Templates
 
-Templates can include various interactive elements such as buttons. You can create different types of templates like Generic Templates, Button Templates, and more, using the corresponding classes and methods provided by the library.
+Templates can include various interactive elements such as buttons. You can
+create different types of templates like Generic Templates, Button Templates,
+and more, using the corresponding classes and methods provided by the library.
 
-By using these methods, you can create rich and interactive messages tailored to your needs, ensuring a better user experience on Messenger.
+By using these methods, you can create rich and interactive messages tailored to
+your needs, ensuring a better user experience on Messenger.
