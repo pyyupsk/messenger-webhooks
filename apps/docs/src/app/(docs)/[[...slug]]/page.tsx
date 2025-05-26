@@ -1,17 +1,17 @@
-import type { Metadata } from 'next';
-
-import { source } from '@/app/source';
 import { getGithubLastEdit } from 'fumadocs-core/server';
-import defaultMdxComponents from 'fumadocs-ui/mdx';
-import { getImageMeta } from 'fumadocs-ui/og';
+import { createRelativeLink } from 'fumadocs-ui/mdx';
 import { DocsPage, DocsBody, DocsDescription, DocsTitle } from 'fumadocs-ui/page';
 import { notFound } from 'next/navigation';
 
-export default async function Page({ params }: { params: { slug?: string[] } }) {
-    const page = source.getPage(params.slug);
+import { source } from '@/lib/source';
+import { getMDXComponents } from '@/mdx-components';
+
+export default async function Page(props: { params: Promise<{ slug?: string[] }> }) {
+    const { slug = [] } = await props.params;
+    const page = source.getPage(slug);
     if (!page) notFound();
 
-    const MDX = page.data.body;
+    const MDXContent = page.data.body;
 
     const github = {
         owner: 'pyyupsk',
@@ -32,7 +32,12 @@ export default async function Page({ params }: { params: { slug?: string[] } }) 
             <DocsTitle>{page.data.title}</DocsTitle>
             <DocsDescription>{page.data.description}</DocsDescription>
             <DocsBody>
-                <MDX components={{ ...defaultMdxComponents }} />
+                <MDXContent
+                    components={getMDXComponents({
+                        // this allows you to link to other pages with relative file paths
+                        a: createRelativeLink(source, page),
+                    })}
+                />
             </DocsBody>
         </DocsPage>
     );
@@ -42,11 +47,12 @@ export async function generateStaticParams() {
     return source.generateParams();
 }
 
-export function generateMetadata({ params }: { params: { slug?: string[] } }) {
-    const page = source.getPage(params.slug);
+export async function generateMetadata(props: { params: Promise<{ slug?: string[] }> }) {
+    const { slug = [] } = await props.params;
+    const page = source.getPage(slug);
     if (!page) notFound();
 
-    const image = getImageMeta('og', page.slugs);
+    const image = ['/docs-og', ...slug, 'image.png'].join('/');
 
     return {
         title: page.data.title,
@@ -59,5 +65,5 @@ export function generateMetadata({ params }: { params: { slug?: string[] } }) {
             images: image,
             card: 'summary_large_image',
         },
-    } satisfies Metadata;
+    };
 }
