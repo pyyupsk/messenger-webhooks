@@ -44,7 +44,7 @@ messages.
 - **Message Handling**: Receives POST requests and emits events based on the
   incoming messages.
 
-## sendRequest<T>
+## sendRequest
 
 ```typescript
 public async sendRequest<T>(

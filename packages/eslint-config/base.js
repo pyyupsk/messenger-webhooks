@@ -5,7 +5,7 @@ import prettier from 'eslint-plugin-prettier';
 import globals from 'globals';
 import tseslint from 'typescript-eslint';
 
-const baseConfig = [
+const baseConfig = tseslint.config(
     {
         plugins: {
             perfectionist,
@@ -47,6 +47,6 @@ const baseConfig = [
     pluginJs.configs.recommended,
     ...tseslint.configs.recommended,
     eslintConfigPrettier,
-];
+);
 
 export default baseConfig;
