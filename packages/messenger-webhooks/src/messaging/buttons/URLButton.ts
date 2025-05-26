@@ -29,7 +29,7 @@ export class URLButton {
      * @param webview_height_ratio - The height ratio of the webview.
      * @returns The current instance of the URLButton.
      */
-    setWebviewHeightRatio(webview_height_ratio: 'compact' | 'tall' | 'full'): URLButton {
+    setWebviewHeightRatio(webview_height_ratio: 'compact' | 'tall' | 'full'): this {
         this.webview_height_ratio = webview_height_ratio;
         return this;
     }
@@ -39,7 +39,7 @@ export class URLButton {
      * @param messenger_extensions - Whether to enable Messenger extensions.
      * @returns The current instance of the URLButton.
      */
-    setMessengerExtensions(messenger_extensions: boolean): URLButton {
+    setMessengerExtensions(messenger_extensions: boolean): this {
         this.messenger_extensions = messenger_extensions;
         return this;
     }
@@ -49,7 +49,7 @@ export class URLButton {
      * @param fallback_url - The fallback URL.
      * @returns The current instance of the URLButton.
      */
-    setFallbackUrl(fallback_url: string): URLButton {
+    setFallbackUrl(fallback_url: string): this {
         this.fallback_url = fallback_url;
         return this;
     }
@@ -59,7 +59,7 @@ export class URLButton {
      * @param webview_share_button - Whether to hide or show the share button.
      * @returns The current instance of the URLButton.
      */
-    setWebviewShareButton(webview_share_button: 'hide' | 'show'): URLButton {
+    setWebviewShareButton(webview_share_button: 'hide' | 'show'): this {
         this.webview_share_button = webview_share_button;
         return this;
     }
