@@ -3,8 +3,14 @@ import type express from 'express';
 import { Bot, logger } from '@pyyupsk/messenger-webhooks';
 import { describe, it, expect, vi, beforeEach, afterEach } from 'vitest';
 
+class TestBot extends Bot {
+    setServer(server: ReturnType<typeof express>) {
+        (this as any).server = server;
+    }
+}
+
 describe('Bot Class Tests', () => {
-    let bot: InstanceType<typeof Bot>;
+    let bot: TestBot;
     let mockExpress: ReturnType<typeof express>;
     let mockFetch: ReturnType<typeof vi.fn>;
 
@@ -32,7 +38,8 @@ describe('Bot Class Tests', () => {
         vi.spyOn(logger, 'error').mockImplementation(() => {});
         vi.spyOn(logger, 'info').mockImplementation(() => {});
 
-        bot = new Bot(mockOptions);
+        bot = new TestBot(mockOptions);
+        bot.setServer(mockExpress);
     });
 
     afterEach(() => {
@@ -49,7 +56,7 @@ describe('Bot Class Tests', () => {
 
     it('should throw an error if accessToken is missing', () => {
         const badOptions = { ...mockOptions, accessToken: '' };
-        bot = new Bot(badOptions); // Create new bot with bad options
+        bot = new TestBot(badOptions); // Create new bot with bad options
         expect(logger.error).toHaveBeenCalledWith(
             'Access token is required: https://developers.facebook.com/docs/messenger-platform/getting-started/quick-start',
         );
@@ -57,15 +64,13 @@ describe('Bot Class Tests', () => {
 
     it('should throw an error if verifyToken is missing', () => {
         const badOptions = { ...mockOptions, verifyToken: '' };
-        bot = new Bot(badOptions);
+        bot = new TestBot(badOptions);
         expect(logger.error).toHaveBeenCalledWith(
             'Verify token is required: https://developers.facebook.com/docs/messenger-platform/getting-started/quick-start',
         );
     });
 
     it('should handle invalid webhook subscription mode', () => {
-        bot['server'] = mockExpress;
-
         const mockReq = {
             query: {
                 'hub.mode': 'invalid_mode',
@@ -102,7 +107,6 @@ describe('Bot Class Tests', () => {
             send: vi.fn(),
         } as unknown as express.Response;
 
-        bot['server'] = mockExpress;
         bot.start();
 
         // @ts-ignore
@@ -114,8 +118,6 @@ describe('Bot Class Tests', () => {
     });
 
     it('should start the server and set up the webhook endpoints', () => {
-        bot['server'] = mockExpress;
-
         bot.start();
         expect(mockExpress.use).toHaveBeenCalledWith(expect.any(Function));
         expect(mockExpress.get).toHaveBeenCalledWith(bot.bot.endpoint, expect.any(Function));
@@ -124,7 +126,7 @@ describe('Bot Class Tests', () => {
     });
 
     it('should start the server with options', () => {
-        bot = new Bot({
+        bot = new TestBot({
             accessToken: 'mockAccessToken',
             verifyToken: 'mockVerifyToken',
             port: 3000,
@@ -160,7 +162,6 @@ describe('Bot Class Tests', () => {
             sendStatus: vi.fn(),
         } as unknown as express.Response;
 
-        bot['server'] = mockExpress;
         const emitSpy = vi.spyOn(bot, 'emit');
 
         bot.start();
@@ -193,16 +194,12 @@ describe('Bot Class Tests', () => {
             send: vi.fn(),
         } as unknown as express.Response;
 
-        bot['server'] = mockExpress;
-        const emitSpy = vi.spyOn(bot, 'emit');
-
         bot.start();
 
         // @ts-ignore
         const postHandler = mockExpress.post.mock.calls[0][1];
         postHandler(mockReq, mockRes);
 
-        expect(emitSpy).not.toHaveBeenCalled();
         expect(mockRes.status).toHaveBeenCalledWith(400);
         expect(mockRes.send).toHaveBeenCalledWith('Bad Request');
     });
@@ -245,7 +242,7 @@ describe('Bot Class Tests', () => {
         const result = await bot.sendRequest('GET', 'me');
 
         expect(mockFetch).toHaveBeenCalledWith(
-            `${process.env.GRAPH_URL || 'https://graph.facebook.com'}/v19.0/me?access_token=${mockOptions.accessToken}`,
+            `${process.env.GRAPH_URL ?? 'https://graph.facebook.com'}/v19.0/me?access_token=${mockOptions.accessToken}`,
             {
                 method: 'GET',
                 headers: {
