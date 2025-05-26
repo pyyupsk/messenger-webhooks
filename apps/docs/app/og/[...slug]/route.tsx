@@ -17,10 +17,10 @@ export function GET(_: NextRequest, { params }: { params: { slug: string[] } }) 
             <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width={120}
-                clip-rule="evenodd"
-                fill-rule="evenodd"
-                stroke-linejoin="round"
-                stroke-miterlimit="2"
+                clipRule="evenodd"
+                fillRule="evenodd"
+                strokeLinejoin="round"
+                strokeMiterlimit="2"
                 viewBox="0 0 560 400"
             >
                 <radialGradient
@@ -31,12 +31,12 @@ export function GET(_: NextRequest, { params }: { params: { slug: string[] } }) 
                     gradientUnits="userSpaceOnUse"
                     r="1"
                 >
-                    <stop offset="0" stop-color="#09f" />
-                    <stop offset=".61" stop-color="#a033ff" />
-                    <stop offset=".93" stop-color="#ff5280" />
-                    <stop offset="1" stop-color="#ff7061" />
+                    <stop offset="0" stopColor="#09f" />
+                    <stop offset=".61" stopColor="#a033ff" />
+                    <stop offset=".93" stopColor="#ff5280" />
+                    <stop offset="1" stopColor="#ff7061" />
                 </radialGradient>
-                <g fill-rule="nonzero">
+                <g fillRule="nonzero">
                     <path
                         d="m280 65c-76.032 0-134.988 55.716-134.988 130.938 0 39.349 16.131 73.366 42.386 96.854 2.194 1.958 3.544 4.725 3.611 7.695l.743 24.027c.236 7.661 8.133 12.656 15.152 9.551l26.795-11.812c2.261-1.012 4.826-1.181 7.222-.54 12.318 3.375 25.411 5.198 39.079 5.198 76.032 0 134.988-55.717 134.988-130.939s-58.956-130.972-134.988-130.972z"
                         fill="url(#a)"
