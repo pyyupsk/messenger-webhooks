@@ -30,7 +30,7 @@ export class GenericElement {
      * @returns The current instance of GenericElement.
      * @throws Error if the subtitle exceeds 80 characters.
      */
-    setSubtitle(subtitle: string): GenericElement {
+    setSubtitle(subtitle: string): this {
         if (subtitle.length > 80) {
             throw new Error('Subtitle must be 80 characters or less.');
         }
@@ -43,7 +43,7 @@ export class GenericElement {
      * @param image_url - The image URL to set.
      * @returns The current instance of GenericElement.
      */
-    setImageUrl(image_url: string): GenericElement {
+    setImageUrl(image_url: string): this {
         this.image_url = image_url;
         return this;
     }
@@ -57,7 +57,7 @@ export class GenericElement {
         type: string;
         url: string;
         webview_height_ratio: string;
-    }): GenericElement {
+    }): this {
         this.default_action = default_action;
         return this;
     }
@@ -68,7 +68,7 @@ export class GenericElement {
      * @returns The current instance of GenericElement.
      * @throws Error if adding the buttons exceeds the maximum of 3 buttons.
      */
-    addButtons(buttons: Button[]): GenericElement {
+    addButtons(buttons: Button[]): this {
         if (this.buttons && this.buttons.length + buttons.length > 3) {
             throw new Error('Button template can have a maximum of 3 buttons.');
         }
@@ -111,7 +111,7 @@ export class GenericTemplate {
      * @returns The current instance of GenericTemplate.
      * @throws Error if adding the element exceeds the maximum of 10 elements.
      */
-    addElement(element: GenericElement[]): GenericTemplate {
+    addElement(element: GenericElement[]): this {
         if (this.elements.length >= 10) {
             throw new Error('Generic template supports a maximum of 10 elements');
         }

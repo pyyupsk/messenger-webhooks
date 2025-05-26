@@ -42,7 +42,7 @@ export class ReceiptElement {
      * @param subtitle - The subtitle to set.
      * @returns The current instance of ReceiptElement.
      */
-    setSubtitle(subtitle: string): ReceiptElement {
+    setSubtitle(subtitle: string): this {
         this.subtitle = subtitle;
         return this;
     }
@@ -52,7 +52,7 @@ export class ReceiptElement {
      * @param quantity - The quantity to set.
      * @returns The current instance of ReceiptElement.
      */
-    setQuantity(quantity: number): ReceiptElement {
+    setQuantity(quantity: number): this {
         this.quantity = quantity;
         return this;
     }
@@ -62,7 +62,7 @@ export class ReceiptElement {
      * @param currency - The currency to set.
      * @returns The current instance of ReceiptElement.
      */
-    setCurrency(currency: string): ReceiptElement {
+    setCurrency(currency: string): this {
         this.currency = currency;
         return this;
     }
@@ -72,7 +72,7 @@ export class ReceiptElement {
      * @param imageUrl - The image URL to set.
      * @returns The current instance of ReceiptElement.
      */
-    setImageUrl(imageUrl: string): ReceiptElement {
+    setImageUrl(imageUrl: string): this {
         this.image_url = imageUrl;
         return this;
     }
@@ -137,7 +137,7 @@ export class ReceiptTemplate {
      * @param merchant_name - The merchant name to set.
      * @returns The current instance of ReceiptTemplate.
      */
-    setMerchantName(merchant_name: string): ReceiptTemplate {
+    setMerchantName(merchant_name: string): this {
         this.merchant_name = merchant_name;
         return this;
     }
@@ -147,7 +147,7 @@ export class ReceiptTemplate {
      * @param order_url - The order URL to set.
      * @returns The current instance of ReceiptTemplate.
      */
-    setOrderUrl(order_url: string): ReceiptTemplate {
+    setOrderUrl(order_url: string): this {
         this.order_url = order_url;
         return this;
     }
@@ -157,7 +157,7 @@ export class ReceiptTemplate {
      * @param timestamp - The timestamp to set.
      * @returns The current instance of ReceiptTemplate.
      */
-    setTimestamp(timestamp: number): ReceiptTemplate {
+    setTimestamp(timestamp: number): this {
         this.timestamp = timestamp;
         return this;
     }
@@ -167,7 +167,7 @@ export class ReceiptTemplate {
      * @param address - The address object to set.
      * @returns The current instance of ReceiptTemplate.
      */
-    setAddress(address: Address): ReceiptTemplate {
+    setAddress(address: Address): this {
         this.address = address;
         return this;
     }
@@ -177,7 +177,7 @@ export class ReceiptTemplate {
      * @param summary - The summary object to set.
      * @returns The current instance of ReceiptTemplate.
      */
-    setSummary(summary: Summary): ReceiptTemplate {
+    setSummary(summary: Summary): this {
         this.summary = { ...this.summary, ...summary };
         return this;
     }
@@ -187,10 +187,8 @@ export class ReceiptTemplate {
      * @param adjustment - The adjustment object to add.
      * @returns The current instance of ReceiptTemplate.
      */
-    addAdjustment(adjustment: Adjustment[]): ReceiptTemplate {
-        if (!this.adjustments) {
-            this.adjustments = [];
-        }
+    addAdjustment(adjustment: Adjustment[]): this {
+        this.adjustments ??= [];
         this.adjustments.push(...adjustment);
         return this;
     }
@@ -201,7 +199,7 @@ export class ReceiptTemplate {
      * @returns The current instance of ReceiptTemplate.
      * @throws Error if adding the element exceeds the maximum of 100 elements.
      */
-    addElement(element: ReceiptElement[]): ReceiptTemplate {
+    addElement(element: ReceiptElement[]): this {
         if (this.elements.length >= 100) {
             throw new Error('Receipt template supports a maximum of 100 elements');
         }

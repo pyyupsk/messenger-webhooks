@@ -22,7 +22,7 @@ export class MediaElement {
      * @returns The current instance of MediaElement.
      * @throws Error if both attachment_id and url are set.
      */
-    setAttachmentId(attachment_id: string): MediaElement {
+    setAttachmentId(attachment_id: string): this {
         if (this.url) {
             throw new Error('Cannot set both attachment_id and url');
         }
@@ -37,7 +37,7 @@ export class MediaElement {
      * @returns The current instance of MediaElement.
      * @throws Error if both attachment_id and url are set.
      */
-    setUrl(url: string): MediaElement {
+    setUrl(url: string): this {
         if (this.attachment_id) {
             throw new Error('Cannot set both attachment_id and url');
         }
@@ -52,7 +52,7 @@ export class MediaElement {
      * @returns The current instance of MediaElement.
      * @throws Error if adding the buttons exceeds the maximum of 3 buttons.
      */
-    addButtons(buttons: Button[]): MediaElement {
+    addButtons(buttons: Button[]): this {
         if (this.buttons && this.buttons.length + buttons.length > 3) {
             throw new Error('Button template can have a maximum of 3 buttons.');
         }
@@ -92,7 +92,7 @@ export class MediaTemplate {
      * @param element - The MediaElement to add.
      * @returns The current instance of MediaTemplate.
      */
-    addElement(element: MediaElement): MediaTemplate {
+    addElement(element: MediaElement): this {
         this.elements.push(element);
         return this;
     }

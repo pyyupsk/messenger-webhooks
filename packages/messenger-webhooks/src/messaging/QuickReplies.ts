@@ -19,7 +19,7 @@ export class QuickReply {
      * @param payload - The payload to set.
      * @returns The current instance of QuickReply.
      */
-    setPayload(payload: string | number): QuickReply {
+    setPayload(payload: string | number): this {
         this.payload = payload;
         return this;
     }
@@ -29,7 +29,7 @@ export class QuickReply {
      * @param imageUrl - The image URL to set.
      * @returns The current instance of QuickReply.
      */
-    setImageUrl(imageUrl: string): QuickReply {
+    setImageUrl(imageUrl: string): this {
         this.image_url = imageUrl;
         return this;
     }
@@ -66,7 +66,7 @@ export class QuickReplies {
      * @param attachment - The attachment object to set.
      * @returns The current instance of QuickReplies.
      */
-    setAttachment(attachment: object): QuickReplies {
+    setAttachment(attachment: object): this {
         this.attachment = attachment;
         return this;
     }
@@ -76,7 +76,7 @@ export class QuickReplies {
      * @param replies - An array of QuickReply objects to add.
      * @returns The current instance of QuickReplies.
      */
-    addQuickReply(replies: QuickReply[]): QuickReplies {
+    addQuickReply(replies: QuickReply[]): this {
         this.quick_replies.push(...replies);
         return this;
     }

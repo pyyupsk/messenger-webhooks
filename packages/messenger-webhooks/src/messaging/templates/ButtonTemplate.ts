@@ -25,7 +25,7 @@ export class ButtonTemplate {
      * @returns The current instance of the ButtonTemplate.
      * @throws Error if adding the buttons exceeds the maximum of 3 buttons.
      */
-    addButtons(buttons: Button[]): ButtonTemplate {
+    addButtons(buttons: Button[]): this {
         if (this.buttons && this.buttons.length + buttons.length > 3) {
             throw new Error('Button template can have a maximum of 3 buttons.');
         }

@@ -1,0 +1,6 @@
+{
+    "sonarlint.connectedMode.project": {
+        "connectionId": "pyyupsk",
+        "projectKey": "pyyupsk_messenger-webhooks"
+    }
+}
