@@ -1,5 +1,16 @@
 # @pyyupsk/messenger-webhooks
 
+## 1.2.0
+
+### Minor Changes
+
+- Updated dependencies to latest versions:
+  - express: ^4.19.2 → ^5.1.0
+  - @types/express: ^4.17.21 → ^5.0.2
+  - tsup: ^8.2.4 → ^8.5.0
+  - typescript: ^5.5.4 → ^5.8.3
+- Improved method return types to use `this` for better type inference
+
 ## 1.1.3
 
 ### Patch Changes
