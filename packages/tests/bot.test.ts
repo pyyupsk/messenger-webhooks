@@ -49,7 +49,7 @@ describe('Bot Class Tests', () => {
 
     it('should throw an error if accessToken is missing', () => {
         const badOptions = { ...mockOptions, accessToken: '' };
-        new Bot(badOptions); // Create new bot with bad options
+        bot = new Bot(badOptions); // Create new bot with bad options
         expect(logger.error).toHaveBeenCalledWith(
             'Access token is required: https://developers.facebook.com/docs/messenger-platform/getting-started/quick-start',
         );
@@ -57,7 +57,7 @@ describe('Bot Class Tests', () => {
 
     it('should throw an error if verifyToken is missing', () => {
         const badOptions = { ...mockOptions, verifyToken: '' };
-        new Bot(badOptions);
+        bot = new Bot(badOptions);
         expect(logger.error).toHaveBeenCalledWith(
             'Verify token is required: https://developers.facebook.com/docs/messenger-platform/getting-started/quick-start',
         );
