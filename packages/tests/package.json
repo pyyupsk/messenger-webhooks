@@ -6,11 +6,11 @@
         "test": "vitest"
     },
     "dependencies": {
-        "express": "^4.19.2"
+        "express": "^5.1.0"
     },
     "devDependencies": {
         "@pyyupsk/messenger-webhooks": "workspace:*",
-        "@types/express": "^4.17.21",
-        "vitest": "^2.0.5"
+        "@types/express": "^5.0.2",
+        "vitest": "^3.1.4"
     }
 }
