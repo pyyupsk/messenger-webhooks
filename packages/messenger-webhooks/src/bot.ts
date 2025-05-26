@@ -1,10 +1,12 @@
-import type { EventType } from '@/types';
 import type { Express, Request, Response } from 'express';
+
+import EventEmitter from 'events';
+import express, { json } from 'express';
+
+import type { EventType } from '@/types';
 
 import { GRAPH_URL } from '@/constants';
 import { colors, determineEventType, logger } from '@/utils';
-import EventEmitter from 'events';
-import express, { json } from 'express';
 
 /** Configuration options for the Bot instance. */
 interface Options {
