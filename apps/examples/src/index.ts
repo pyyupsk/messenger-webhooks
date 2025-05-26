@@ -6,8 +6,8 @@ import 'dotenv/config';
 import { getWeather } from './weatherService';
 
 const bot = new Bot({
-    accessToken: process.env.ACCESS_TOKEN || '',
-    verifyToken: process.env.VERIFY_TOKEN || '',
+    accessToken: process.env.ACCESS_TOKEN ?? '',
+    verifyToken: process.env.VERIFY_TOKEN ?? '',
 });
 
 bot.on('message', async (event: MessageEvent) => {
