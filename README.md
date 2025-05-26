@@ -19,16 +19,24 @@
                 alt="Downloads"
             />
         </a>
+        <a href="https://github.com/pyyupsk/messenger-webhooks/blob/main/LICENSE">
+            <img
+                src="https://img.shields.io/npm/l/@pyyupsk/messenger-webhooks.svg"
+                alt="License"
+            />
+        </a>
+    </p>
+    <p>
         <a href="https://app.fossa.com/projects/git%2Bgithub.com%2Fpyyupsk%2Fmessenger-webhooks?ref=badge_shield">
             <img
                 src="https://app.fossa.com/api/projects/git%2Bgithub.com%2Fpyyupsk%2Fmessenger-webhooks.svg?type=shield"
                 alt="FOSSA Status"
             />
         </a>
-        <a href="https://github.com/pyyupsk/messenger-webhooks/blob/main/LICENSE">
+        <a href="https://sonarcloud.io/dashboard?id=pyyupsk_messenger-webhooks">
             <img
-                src="https://img.shields.io/npm/l/@pyyupsk/messenger-webhooks.svg"
-                alt="License"
+                src="https://sonarcloud.io/api/project_badges/measure?project=pyyupsk_messenger-webhooks&metric=alert_status"
+                alt="SonarCloud"
             />
         </a>
     </p>
