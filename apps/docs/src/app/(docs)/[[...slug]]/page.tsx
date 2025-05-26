@@ -6,7 +6,7 @@ import { notFound } from 'next/navigation';
 import { source } from '@/lib/source';
 import { getMDXComponents } from '@/mdx-components';
 
-export default async function Page(props: { params: Promise<{ slug?: string[] }> }) {
+export default async function Page(props: Readonly<{ params: Promise<{ slug?: string[] }> }>) {
     const { slug = [] } = await props.params;
     const page = source.getPage(slug);
     if (!page) notFound();
