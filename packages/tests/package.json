@@ -10,7 +10,7 @@
     },
     "devDependencies": {
         "@pyyupsk/messenger-webhooks": "workspace:*",
-        "@types/express": "^5.0.2",
-        "vitest": "^3.1.4"
+        "@types/express": "^5.0.5",
+        "vitest": "^4.0.13"
     }
 }
