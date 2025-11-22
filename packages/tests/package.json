@@ -1,16 +1,16 @@
 {
-    "name": "@repo/tests",
-    "version": "1.2.0",
-    "private": true,
-    "scripts": {
-        "test": "vitest"
-    },
-    "dependencies": {
-        "express": "^5.1.0"
-    },
-    "devDependencies": {
-        "@pyyupsk/messenger-webhooks": "workspace:*",
-        "@types/express": "^5.0.5",
-        "vitest": "^4.0.13"
-    }
+  "name": "@repo/tests",
+  "version": "1.2.0",
+  "private": true,
+  "scripts": {
+    "test": "vitest"
+  },
+  "dependencies": {
+    "express": "^5.1.0"
+  },
+  "devDependencies": {
+    "@pyyupsk/messenger-webhooks": "workspace:*",
+    "@types/express": "^5.0.5",
+    "vitest": "^4.0.13"
+  }
 }

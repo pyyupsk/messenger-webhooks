@@ -1,13 +1,13 @@
-export interface WebhookEvent {
-    sender: Sender;
-    recipient: Recipient;
-    timestamp: number;
-}
+export type WebhookEvent = {
+  sender: Sender;
+  recipient: Recipient;
+  timestamp: number;
+};
 
-interface Sender {
-    id: string;
-}
+type Sender = {
+  id: string;
+};
 
-interface Recipient {
-    id: string;
-}
+type Recipient = {
+  id: string;
+};

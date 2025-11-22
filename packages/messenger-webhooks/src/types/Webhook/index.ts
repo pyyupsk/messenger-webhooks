@@ -3,5 +3,5 @@
  * These types are used for handling incoming webhook events from Facebook Messenger.
  */
 
-export type { WebhookBody } from './WebhookBody';
-export type { WebhookEvent } from './WebhookEvent';
+export type { WebhookBody } from "./WebhookBody";
+export type { WebhookEvent } from "./WebhookEvent";

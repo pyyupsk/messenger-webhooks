@@ -1,5 +1,5 @@
 {
-    "title": "Buttons",
-    "defaultOpen": true,
-    "pages": ["url-button", "postback-button", "call-button"]
+  "title": "Buttons",
+  "defaultOpen": true,
+  "pages": ["url-button", "postback-button", "call-button"]
 }

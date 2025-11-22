@@ -1,25 +1,25 @@
 {
-    "extends": "@repo/typescript-config/base.json",
-    "compilerOptions": {
-        "baseUrl": ".",
-        "target": "ESNext",
-        "lib": ["dom", "dom.iterable", "esnext"],
-        "forceConsistentCasingInFileNames": true,
-        "noEmit": true,
-        "module": "esnext",
-        "moduleResolution": "bundler",
-        "jsx": "preserve",
-        "incremental": true,
-        "paths": {
-            "@/.source": ["./.source/index.ts"],
-            "@/*": ["./src/*"]
-        },
-        "plugins": [
-            {
-                "name": "next"
-            }
-        ]
+  "extends": "@repo/typescript-config/base.json",
+  "compilerOptions": {
+    "baseUrl": ".",
+    "target": "ESNext",
+    "lib": ["dom", "dom.iterable", "esnext"],
+    "forceConsistentCasingInFileNames": true,
+    "noEmit": true,
+    "module": "esnext",
+    "moduleResolution": "bundler",
+    "jsx": "preserve",
+    "incremental": true,
+    "paths": {
+      "@/.source": ["./.source/index.ts"],
+      "@/*": ["./src/*"]
     },
-    "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
-    "exclude": ["node_modules"]
+    "plugins": [
+      {
+        "name": "next"
+      }
+    ]
+  },
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
+  "exclude": ["node_modules"]
 }

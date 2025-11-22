@@ -1,25 +1,25 @@
 {
-    "extends": "@repo/typescript-config/base.json",
-    "compilerOptions": {
-        "module": "ESNext",
-        "moduleResolution": "Bundler",
-        "outDir": "dist",
-        "declaration": true,
-        "lib": ["ESNext"],
-        "baseUrl": ".",
-        "paths": {
-            "@/*": ["src/*"]
-        }
-    },
-    "include": [
-        "src/**/*.ts",
-        "__tests__/**/*.ts",
-        "tsup.config.ts",
-        "../tests/bot.test.ts",
-        "../tests/button-template.test.ts",
-        "../tests/button.test.ts",
-        "../tests/generic-template.test.ts",
-        "../tests/media-template.test.ts"
-    ],
-    "exclude": ["node_modules", "dist"]
+  "extends": "@repo/typescript-config/base.json",
+  "compilerOptions": {
+    "module": "ESNext",
+    "moduleResolution": "Bundler",
+    "outDir": "dist",
+    "declaration": true,
+    "lib": ["ESNext"],
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["src/*"]
+    }
+  },
+  "include": [
+    "src/**/*.ts",
+    "__tests__/**/*.ts",
+    "tsup.config.ts",
+    "../tests/bot.test.ts",
+    "../tests/button-template.test.ts",
+    "../tests/button.test.ts",
+    "../tests/generic-template.test.ts",
+    "../tests/media-template.test.ts"
+  ],
+  "exclude": ["node_modules", "dist"]
 }

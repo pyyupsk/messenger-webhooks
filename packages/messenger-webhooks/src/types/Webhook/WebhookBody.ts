@@ -1,6 +1,6 @@
-import type { Event } from '@/types';
+import type { Event } from "@/types";
 
-export interface WebhookBody {
-    object: string;
-    entry: Event[];
-}
+export type WebhookBody = {
+  object: string;
+  entry: Event[];
+};

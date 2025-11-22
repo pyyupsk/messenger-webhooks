@@ -1,5 +1,10 @@
 {
-    "title": "Message Templates",
-    "defaultOpen": true,
-    "pages": ["button-template", "generic-template", "media-template", "receipt-template"]
+  "title": "Message Templates",
+  "defaultOpen": true,
+  "pages": [
+    "button-template",
+    "generic-template",
+    "media-template",
+    "receipt-template"
+  ]
 }

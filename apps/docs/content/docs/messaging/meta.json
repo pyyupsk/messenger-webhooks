@@ -1,5 +1,5 @@
 {
-    "title": "Messaging",
-    "defaultOpen": true,
-    "pages": ["buttons", "quick-replies", "templates"]
+  "title": "Messaging",
+  "defaultOpen": true,
+  "pages": ["buttons", "quick-replies", "templates"]
 }

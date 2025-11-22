@@ -1,13 +1,13 @@
 {
-    "compilerOptions": {
-        "esModuleInterop": true,
-        "skipLibCheck": true,
-        "allowJs": true,
-        "resolveJsonModule": true,
-        "moduleDetection": "force",
-        "isolatedModules": true,
-        "strict": true,
-        "noUncheckedIndexedAccess": true,
-        "noImplicitOverride": true
-    }
+  "compilerOptions": {
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "allowJs": true,
+    "resolveJsonModule": true,
+    "moduleDetection": "force",
+    "isolatedModules": true,
+    "strict": true,
+    "noUncheckedIndexedAccess": true,
+    "noImplicitOverride": true
+  }
 }
