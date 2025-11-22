@@ -22,6 +22,8 @@ jobs:
         run: bun install --frozen-lockfile
       - name: 🧹 Lint
         run: bun run --filter=@pyyupsk/messenger-webhooks lint
+      - name: 🔍 Type check
+        run: bun run typecheck
       - name: 🏗️ Build
         run: bun run --filter=@pyyupsk/messenger-webhooks build
       - name: 🧪 Test

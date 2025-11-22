@@ -29,7 +29,8 @@
   ],
   "scripts": {
     "build": "tsup",
-    "lint": "biome check ."
+    "lint": "biome check .",
+    "typecheck": "tsc --noEmit"
   },
   "dependencies": {
     "express": "^5.1.0"

@@ -1,4 +1,4 @@
-import { getGithubLastEdit } from "fumadocs-core/server";
+import { getGithubLastEdit } from "fumadocs-core/content/github";
 import { createRelativeLink } from "fumadocs-ui/mdx";
 import {
   DocsBody,
@@ -6,16 +6,14 @@ import {
   DocsPage,
   DocsTitle,
 } from "fumadocs-ui/page";
+import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-
-import { source } from "@/lib/source";
+import { getPageImage, source } from "@/lib/source";
 import { getMDXComponents } from "@/mdx-components";
 
-export default async function Page(
-  props: Readonly<{ params: Promise<{ slug?: string[] }> }>,
-) {
-  const { slug = [] } = await props.params;
-  const page = source.getPage(slug);
+export default async function Page(props: PageProps<"/docs/[[...slug]]">) {
+  const params = await props.params;
+  const page = source.getPage(params.slug);
   if (!page) notFound();
 
   const MDXContent = page.data.body;
@@ -24,7 +22,7 @@ export default async function Page(
     owner: "pyyupsk",
     repo: "messenger-webhooks",
     sha: "main",
-    path: `apps/docs/content/docs/${page.file.path}`,
+    path: `apps/docs/content/docs/${page.path}`,
   };
 
   const lastUpdate = await getGithubLastEdit(github);
@@ -54,25 +52,18 @@ export async function generateStaticParams() {
   return source.generateParams();
 }
 
-export async function generateMetadata(props: {
-  params: Promise<{ slug?: string[] }>;
-}) {
-  const { slug = [] } = await props.params;
-  const page = source.getPage(slug);
+export async function generateMetadata(
+  props: PageProps<"/docs/[[...slug]]">,
+): Promise<Metadata> {
+  const params = await props.params;
+  const page = source.getPage(params.slug);
   if (!page) notFound();
-
-  const image = ["/docs-og", ...slug, "image.png"].join("/");
 
   return {
     title: page.data.title,
     description: page.data.description,
-    metadataBase: new URL("https://messenger-webhooks.vercel.app"),
     openGraph: {
-      images: image,
-    },
-    twitter: {
-      images: image,
-      card: "summary_large_image",
+      images: getPageImage(page).url,
     },
   };
 }

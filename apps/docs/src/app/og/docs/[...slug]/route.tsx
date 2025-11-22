@@ -1,11 +1,12 @@
 import { generateOGImage } from "fumadocs-ui/og";
 import { notFound } from "next/navigation";
+import { getPageImage, source } from "@/lib/source";
 
-import { source } from "@/lib/source";
+export const revalidate = false;
 
 export async function GET(
   _req: Request,
-  { params }: { params: Promise<{ slug: string[] }> },
+  { params }: RouteContext<"/og/docs/[...slug]">,
 ) {
   const { slug } = await params;
   const page = source.getPage(slug.slice(0, -1));
@@ -18,6 +19,7 @@ export async function GET(
     primaryTextColor: "rgb(255, 255, 255)",
     primaryColor: "rgb(151, 53, 237)",
     icon: (
+      // biome-ignore lint/a11y/noSvgWithoutTitle: Title tag is added by generateOGImage
       <svg
         xmlns="http://www.w3.org/2000/svg"
         width={120}
@@ -27,7 +29,6 @@ export async function GET(
         strokeMiterlimit="2"
         viewBox="0 0 560 400"
       >
-        <title>Facebook Messenger</title>
         <radialGradient
           id="a"
           cx="0"
@@ -57,8 +58,8 @@ export async function GET(
 }
 
 export function generateStaticParams() {
-  return source.generateParams().map((page) => ({
-    ...page,
-    slug: [...page.slug, "image.png"],
+  return source.getPages().map((page) => ({
+    lang: page.locale,
+    slug: getPageImage(page).segments,
   }));
 }
