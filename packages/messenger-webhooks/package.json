@@ -28,7 +28,8 @@
     "library"
   ],
   "scripts": {
-    "build": "tsup"
+    "build": "tsup",
+    "lint": "biome check ."
   },
   "dependencies": {
     "express": "^5.1.0"

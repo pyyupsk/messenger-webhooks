@@ -19,22 +19,27 @@ By participating in this project, you are expected to uphold our Code of Conduct
 ## Development Setup
 
 1. Clone the repository:
+
    ```bash
    git clone https://github.com/pyyupsk/messenger-webhooks.git
    ```
+
 2. Install dependencies:
+
    ```bash
    npm install
    ```
+
 3. Build the project:
+
    ```bash
    npm run build
    ```
 
 ## Coding Standards
 
-- We use ESLint for linting. Run `npm run lint` to check your code.
-- We use Prettier for code formatting. Run `npm run format:fix` to format your
+- We use Biome for linting. Run `npm run lint` to check your code.
+- We use Biome for code formatting. Run `npm run format:fix` to format your
   code.
 - Write clear, readable, and well-documented code.
 

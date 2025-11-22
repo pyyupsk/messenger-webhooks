@@ -8,22 +8,21 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
         name: ⬇️ Checkout repository
-      - uses: pnpm/action-setup@v4
-        name: 🛠️ Setup pnpm
+      - uses: oven-sh/setup-bun@v2
+        name: 🛠️ Setup bun
         with:
-          version: 9.9.0
-      - uses: actions/setup-node@v4
+          bun-version: latest
+      - uses: actions/setup-node@v6
         name: 📦 Setup Node.js
         with:
-          node-version: 20
-          cache: pnpm
+          node-version: 23
       - name: 🔍 Install dependencies
-        run: pnpm install --frozen-lockfile
+        run: bun install --frozen-lockfile
       - name: 🧹 Lint
-        run: pnpm lint --filter=@pyyupsk/messenger-webhooks
+        run: bun run --filter=@pyyupsk/messenger-webhooks lint
       - name: 🏗️ Build
-        run: pnpm build --filter=@pyyupsk/messenger-webhooks
+        run: bun run --filter=@pyyupsk/messenger-webhooks build
       - name: 🧪 Test
-        run: pnpm test --filter=@pyyupsk/messenger-webhooks
+        run: bun run --filter=@repo/tests test

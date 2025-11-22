@@ -8,9 +8,11 @@ specified city.
 
 1. Clone this repository
 2. Install dependencies:
+
    ```bash
    npm install
    ```
+
 3. Set up your environment variables:
 
    - `ACCESS_TOKEN`: Your Facebook Page Access Token
@@ -23,6 +25,7 @@ specified city.
    ```
 
 5. Start the bot:
+
    ```bash
    npm start
    ```
