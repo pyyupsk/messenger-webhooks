@@ -15,7 +15,6 @@
     "format": "biome format --write",
     "lint": "biome check",
     "lint:fix": "biome check --fix",
-    "prepare": "husky",
     "release": "bun changeset publish --filter=@pyyupsk/messenger-webhooks",
     "start": "turbo start",
     "test": "bun test --filter=@repo/tests"
@@ -26,11 +25,8 @@
     "@commitlint/cli": "^20.1.0",
     "@commitlint/config-conventional": "^20.0.0",
     "@types/node": "^24.10.1",
-    "husky": "^9.1.7",
     "knip": "^5.70.1",
-    "lint-staged": "^16.2.7",
-    "prettier": "^3.6.2",
-    "prettier-plugin-pkg": "^0.21.2",
+    "lefthook": "^2.0.4",
     "turbo": "^2.6.1",
     "typescript": "^5.9.3"
   }

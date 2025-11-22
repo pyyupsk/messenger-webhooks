@@ -1,0 +1,9 @@
+pre-commit:
+  commands:
+    lint:
+      run: bun run lint:fix
+
+commit-msg:
+  commands:
+    commitlint:
+      run: bun commitlint --edit {1}
