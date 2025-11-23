@@ -16,6 +16,7 @@ export function baseOptions(): BaseLayoutProps {
           <span className="font-semibold">Messenger Webhooks</span>
         </div>
       ),
+      url: "/docs",
     },
     githubUrl: "https://github.com/pyyupsk/messenger-webhooks",
   };
