@@ -7,6 +7,7 @@ specified city.
 ## Setup
 
 1. Clone this repository
+
 2. Install dependencies:
 
    ```bash
@@ -14,8 +15,26 @@ specified city.
    ```
 
 3. Set up your environment variables:
-   - `ACCESS_TOKEN`: Your Facebook Page Access Token
-   - `VERIFY_TOKEN`: Your Webhook Verify Token
+
+   Copy the example environment file and configure it with your credentials:
+
+   ```bash
+   cp .env.example .env
+   ```
+
+   Then edit `.env` and fill in your values:
+   - `ACCESS_TOKEN`: Your Facebook Page Access Token (get it from [Facebook Developer Console](https://developers.facebook.com/apps/))
+   - `VERIFY_TOKEN`: Your Webhook Verify Token (any string you choose, must match the one in Facebook webhook setup)
+
+     Generate a secure token using one of these methods:
+
+     ```bash
+     # Using openssl (recommended)
+     openssl rand -base64 32
+
+     # Or use an online generator
+     # https://passgen.fasu.dev/
+     ```
 
 4. Build the project:
 

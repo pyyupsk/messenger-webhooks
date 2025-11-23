@@ -92,10 +92,44 @@ bot.start();
    message content.
 4. **Start the Bot**: Begin handling webhook events.
 
-### Notes
+### Environment Setup
 
-- Make sure to set up your `ACCESS_TOKEN` and `VERIFY_TOKEN` in a `.env` file or
-  as environment variables.
+Before running your bot, you need to configure environment variables:
+
+1. **Create Environment File**:
+
+   ```bash
+   # Create a .env file in your project root
+   touch .env
+   ```
+
+2. **Configure Your Tokens**:
+
+   Add the following variables to your `.env` file:
+   - **`ACCESS_TOKEN`**: Your Facebook Page Access Token
+     - Get it from the [Facebook Developer Console](https://developers.facebook.com/apps/)
+     - Navigate to: Your App > Messenger > Settings > Access Tokens
+
+   - **`VERIFY_TOKEN`**: Your Webhook Verify Token
+     - Any string you choose (must match the one in Facebook webhook setup)
+     - Generate a secure token:
+
+       ```bash
+       # Using openssl (recommended)
+       openssl rand -base64 32
+       ```
+
+       Or visit our [password generator](https://passgen.fasu.dev/) to create a secure random token online.
+
+3. **Example `.env` file**:
+
+   ```bash title=".env"
+   ACCESS_TOKEN=your_facebook_page_access_token_here
+   VERIFY_TOKEN=your_custom_verify_token_here
+   ```
+
+### Additional Notes
+
 - Ensure your server is publicly accessible and correctly configured in your
   Facebook App settings.
 - Run the script to start handling Messenger events.

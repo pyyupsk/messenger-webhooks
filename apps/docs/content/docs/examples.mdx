@@ -53,15 +53,27 @@ Follow these steps to set up and run the Weather Bot example:
 
 4. **Set Up Your Environment Variables**:
 
-   Create a `.env` file in the root of the project with the following variables:
+   Copy the example environment file and configure it with your credentials:
 
-   ```
-   ACCESS_TOKEN=your_facebook_page_access_token
-   VERIFY_TOKEN=your_webhook_verify_token
+   ```bash
+   cp .env.example .env
    ```
 
-   Replace `your_facebook_page_access_token` and `your_webhook_verify_token`
-   with your actual Facebook Page Access Token and Webhook Verify Token.
+   Then edit `.env` and fill in your values:
+   - **`ACCESS_TOKEN`**: Your Facebook Page Access Token
+     - Get it from the [Facebook Developer Console](https://developers.facebook.com/apps/)
+     - Navigate to: Your App > Messenger > Settings > Access Tokens
+
+   - **`VERIFY_TOKEN`**: Your Webhook Verify Token
+     - Any string you choose (must match the one in Facebook webhook setup)
+     - Generate a secure token using one of these methods:
+
+       ```bash
+       # Using openssl (recommended)
+       openssl rand -base64 32
+       ```
+
+       Or visit our [password generator](https://passgen.fasu.dev/) to create a secure random token online.
 
 5. **Build the Project**:
 
