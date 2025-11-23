@@ -42,4 +42,27 @@ export const logger = {
     console.log(prefix, `${colors.red}[error]${colors.reset}`, ...args);
     process.exit(1); // Exit the process with an error code
   },
+
+  /**
+   * Logs a deprecation warning for features that are soft-deprecated.
+   * Format: [DEPRECATED] {feature} is deprecated as of API {version}. {message}
+   *
+   * @param feature - The name of the deprecated feature
+   * @param apiVersion - The API version where deprecation was introduced
+   * @param message - Additional context or recommended alternative
+   * @param docsUrl - Optional URL to Facebook documentation
+   * @see https://developers.facebook.com/docs/messenger-platform/changelog
+   */
+  deprecated: (
+    feature: string,
+    apiVersion: string,
+    message: string,
+    docsUrl?: string,
+  ): void => {
+    const deprecationMessage = `${colors.yellow}[DEPRECATED]${colors.reset} ${feature} is deprecated as of API ${apiVersion}. ${message}`;
+    const fullMessage = docsUrl
+      ? `${deprecationMessage} See: ${docsUrl}`
+      : deprecationMessage;
+    console.warn(prefix, fullMessage);
+  },
 };

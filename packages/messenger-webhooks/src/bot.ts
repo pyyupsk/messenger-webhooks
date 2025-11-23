@@ -1,23 +1,9 @@
 import EventEmitter from "node:events";
 import type { Express, Request, Response } from "express";
 import express, { json } from "express";
-import { GRAPH_URL } from "@/constants";
-import type { EventType } from "@/types";
+import { DEFAULT_API_VERSION, GRAPH_URL } from "@/constants";
+import type { BotConfig, EventType } from "@/types";
 import { colors, determineEventType, logger } from "@/utils";
-
-/** Configuration options for the Bot instance. */
-type Options = {
-  /** The Facebook App access token. */
-  accessToken: string;
-  /** The verification token for webhook setup. */
-  verifyToken: string;
-  /** The port number for the server (default: 8080). */
-  port?: number;
-  /** The webhook endpoint (default: '/webhook'). */
-  endpoint?: string;
-  /** The Facebook Graph API version (default: 'v19.0'). */
-  version?: string;
-};
 
 /** Represents a Bot that integrates with the Facebook Messenger API. */
 export class Bot extends EventEmitter {
@@ -36,21 +22,22 @@ export class Bot extends EventEmitter {
 
   /**
    * Creates an instance of Bot.
-   * @param options - Configuration options for the Bot.
+   * @param config - Configuration options for the Bot.
+   * @see https://developers.facebook.com/docs/messenger-platform/
    */
-  constructor(options: Options) {
+  constructor(config: BotConfig) {
     super();
 
     this.server = express();
-    this.accessToken = options.accessToken;
-    this.verifyToken = options.verifyToken;
+    this.accessToken = config.accessToken;
+    this.verifyToken = config.verifyToken;
 
-    if (!options.accessToken) {
+    if (!config.accessToken) {
       logger.error(
         "Access token is required: https://developers.facebook.com/docs/messenger-platform/getting-started/quick-start",
       );
     }
-    if (!options.verifyToken) {
+    if (!config.verifyToken) {
       logger.error(
         "Verify token is required: https://developers.facebook.com/docs/messenger-platform/getting-started/quick-start",
       );
@@ -59,9 +46,9 @@ export class Bot extends EventEmitter {
     this.bot = {
       id: "",
       name: "",
-      port: options.port ?? 8080,
-      endpoint: options.endpoint ?? "/webhook",
-      version: options.version ?? "v19.0",
+      port: config.port ?? 8080,
+      endpoint: config.endpoint ?? "/webhook",
+      version: config.version ?? DEFAULT_API_VERSION,
     };
   }
 
