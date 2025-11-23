@@ -1,5 +1,10 @@
 type ContentType = "text" | "user_phone_number" | "user_email";
 
+/**
+ * Represents a Quick Reply button for user responses.
+ * Backward compatible across API v19.0 - v24.0 (enhanced validation for image_url in v20+)
+ * @see https://developers.facebook.com/docs/messenger-platform/send-messages/quick-replies
+ */
 export class QuickReply {
   content_type: ContentType = "text";
   title?: string;

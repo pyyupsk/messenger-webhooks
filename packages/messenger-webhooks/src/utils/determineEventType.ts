@@ -1,7 +1,10 @@
 import type {
   EchoesEvent,
   EventType,
+  MessageDeliveryEvent,
   MessageEvent,
+  MessageReactionEvent,
+  MessageReadEvent,
   PostbackEvent,
   QuickReplyEvent,
   ReferralsEvent,
@@ -14,12 +17,17 @@ type Event =
   | EchoesEvent
   | PostbackEvent
   | TemplateEvent
-  | ReferralsEvent;
+  | ReferralsEvent
+  | MessageReactionEvent
+  | MessageReadEvent
+  | MessageDeliveryEvent;
 
 /**
  * Determines the event type based on the structure of the event object.
+ * Updated for API v19.0 - v24.0 compatibility
  * @param event - The event object to evaluate.
  * @returns The event type or 'unknown' if none match.
+ * @see https://developers.facebook.com/docs/messenger-platform/reference/webhook-events
  */
 export function determineEventType(event: Event): EventType {
   if ("message" in event) {
@@ -35,6 +43,12 @@ export function determineEventType(event: Event): EventType {
     return "template";
   } else if ("referral" in event) {
     return "referral";
+  } else if ("reaction" in event) {
+    return "reaction"; // v20+
+  } else if ("read" in event) {
+    return "message_reads";
+  } else if ("delivery" in event) {
+    return "message_deliveries";
   }
   return "unknown";
 }

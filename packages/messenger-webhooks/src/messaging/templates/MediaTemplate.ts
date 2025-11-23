@@ -2,6 +2,11 @@ import type { Button } from "@/messaging";
 
 type MediaType = "image" | "video";
 
+/**
+ * Represents an element in a MediaTemplate.
+ * Backward compatible across API v19.0 - v24.0 (no schema changes)
+ * @see https://developers.facebook.com/docs/messenger-platform/reference/templates/media
+ */
 export class MediaElement {
   media_type: MediaType;
   attachment_id?: string;
@@ -74,6 +79,11 @@ export class MediaElement {
   }
 }
 
+/**
+ * Represents a MediaTemplate for sharing images or videos.
+ * Backward compatible across API v19.0 - v24.0 (no schema changes)
+ * @see https://developers.facebook.com/docs/messenger-platform/reference/templates/media
+ */
 export class MediaTemplate {
   elements: MediaElement[] = [];
   sharable: boolean;

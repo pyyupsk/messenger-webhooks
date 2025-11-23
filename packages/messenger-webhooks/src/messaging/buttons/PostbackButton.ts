@@ -1,6 +1,7 @@
 /**
  * Represents a Postback button that triggers an event to the server when clicked.
- * Extends the Button class.
+ * Backward compatible across API v19.0 - v24.0 (no schema changes)
+ * @see https://developers.facebook.com/docs/messenger-platform/reference/buttons/postback
  */
 export class PostbackButton {
   title: string;

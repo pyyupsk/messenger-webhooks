@@ -1,6 +1,7 @@
 /**
  * Represents a Call button that initiates a phone call when clicked.
- * Extends the Button class.
+ * Backward compatible across API v19.0 - v24.0 (no schema changes)
+ * @see https://developers.facebook.com/docs/messenger-platform/reference/buttons/call
  */
 export class CallButton {
   title: string;

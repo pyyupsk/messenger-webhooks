@@ -19,6 +19,11 @@ type Adjustment = {
   amount: number;
 };
 
+/**
+ * Represents an item in a ReceiptTemplate.
+ * Backward compatible across API v19.0 - v24.0 (no schema changes)
+ * @see https://developers.facebook.com/docs/messenger-platform/reference/templates/receipt
+ */
 export class ReceiptElement {
   title: string;
   subtitle?: string;
@@ -93,6 +98,11 @@ export class ReceiptElement {
   }
 }
 
+/**
+ * Represents a ReceiptTemplate for displaying order receipts.
+ * Backward compatible across API v19.0 - v24.0 (enhanced currency validation in v20+)
+ * @see https://developers.facebook.com/docs/messenger-platform/reference/templates/receipt
+ */
 export class ReceiptTemplate {
   sharable?: boolean;
   recipient_name: string;

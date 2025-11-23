@@ -1,6 +1,9 @@
 import type {
   EchoesEvent,
+  MessageDeliveryEvent,
   MessageEvent,
+  MessageReactionEvent,
+  MessageReadEvent,
   PostbackEvent,
   QuickReplyEvent,
   ReferralsEvent,
@@ -24,5 +27,8 @@ export type Event = {
     | QuickReplyEvent[]
     | EchoesEvent[]
     | ReferralsEvent[]
-    | TemplateEvent[];
+    | TemplateEvent[]
+    | MessageReactionEvent[] // v20+
+    | MessageReadEvent[]
+    | MessageDeliveryEvent[];
 };

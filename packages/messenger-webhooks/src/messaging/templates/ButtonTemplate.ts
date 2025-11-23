@@ -2,6 +2,8 @@ import type { Button } from "@/messaging";
 
 /**
  * Represents a ButtonTemplate that includes a message with up to 3 buttons.
+ * Backward compatible across API v19.0 - v24.0 (no schema changes)
+ * @see https://developers.facebook.com/docs/messenger-platform/reference/templates/button
  */
 export class ButtonTemplate {
   text: string;

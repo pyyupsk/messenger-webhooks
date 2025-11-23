@@ -1,5 +1,10 @@
 import type { Button } from "@/messaging";
 
+/**
+ * Represents an element in a GenericTemplate carousel.
+ * Backward compatible across API v19.0 - v24.0 (enhanced validation for default_action in v20+)
+ * @see https://developers.facebook.com/docs/messenger-platform/reference/templates/generic
+ */
 export class GenericElement {
   title: string;
   subtitle?: string;
@@ -91,6 +96,11 @@ export class GenericElement {
   }
 }
 
+/**
+ * Represents a GenericTemplate for creating carousel-style messages with up to 10 elements.
+ * Backward compatible across API v19.0 - v24.0 (no schema changes)
+ * @see https://developers.facebook.com/docs/messenger-platform/reference/templates/generic
+ */
 export class GenericTemplate {
   elements: GenericElement[] = [];
   sharable: boolean;

@@ -1,6 +1,7 @@
 /**
  * Represents a URL button that opens a web page when clicked.
- * Extends the Button class.
+ * Backward compatible across API v19.0 - v24.0 (enhanced HTTPS validation in v20+)
+ * @see https://developers.facebook.com/docs/messenger-platform/reference/buttons/url
  */
 export class URLButton {
   title: string;
