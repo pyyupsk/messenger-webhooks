@@ -45,6 +45,9 @@ To get started with the repository, follow these steps:
 
    ```bash
    cd messenger-webhooks
+   ```
+
+   ```package-install
    npm install
    ```
 
@@ -52,7 +55,7 @@ To get started with the repository, follow these steps:
 
    If the project requires building, run:
 
-   ```bash
+   ```package-install
    npm run build
    ```
 
@@ -60,8 +63,8 @@ To get started with the repository, follow these steps:
 
    To ensure everything is working correctly, run:
 
-   ```bash
-   npm test
+   ```package-install
+   npm run test
    ```
 
 ## Contributing

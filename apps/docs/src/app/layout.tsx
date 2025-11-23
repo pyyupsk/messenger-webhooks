@@ -1,10 +1,10 @@
 import "./global.css";
 
 import { RootProvider } from "fumadocs-ui/provider/next";
-import { Glory, Source_Code_Pro } from "next/font/google";
+import { Geist, Geist_Mono } from "next/font/google";
 
-const sans = Glory({ subsets: ["latin"], variable: "--font-sans" });
-const mono = Source_Code_Pro({ subsets: ["latin"], variable: "--font-mono" });
+const sans = Geist({ subsets: ["latin"], variable: "--font-sans" });
+const mono = Geist_Mono({ subsets: ["latin"], variable: "--font-mono" });
 
 export default function Layout({ children }: LayoutProps<"/">) {
   return (
