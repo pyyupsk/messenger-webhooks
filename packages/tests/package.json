@@ -3,14 +3,17 @@
   "version": "1.2.0",
   "private": true,
   "scripts": {
-    "test": "vitest"
+    "test": "vitest",
+    "typecheck": "tsc --noEmit"
   },
   "dependencies": {
     "express": "^5.1.0"
   },
   "devDependencies": {
     "@pyyupsk/messenger-webhooks": "workspace:*",
+    "@repo/typescript-config": "workspace:*",
     "@types/express": "^5.0.5",
+    "typescript": "^5.9.3",
     "vitest": "^4.0.13"
   }
 }

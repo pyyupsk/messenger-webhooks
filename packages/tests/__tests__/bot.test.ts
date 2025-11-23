@@ -4,7 +4,18 @@ import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 
 class TestBot extends Bot {
   setServer(server: ReturnType<typeof express>) {
+    // biome-ignore lint/suspicious/noExplicitAny: Test helper to inject mock server into private property
     (this as any).server = server;
+  }
+
+  getAccessToken(): string {
+    // biome-ignore lint/suspicious/noExplicitAny: Test helper to access private property
+    return (this as any).accessToken;
+  }
+
+  getVerifyToken(): string {
+    // biome-ignore lint/suspicious/noExplicitAny: Test helper to access private property
+    return (this as any).verifyToken;
   }
 }
 
@@ -23,7 +34,7 @@ describe("Bot Class Tests", () => {
 
   beforeEach(() => {
     mockFetch = vi.fn();
-    global.fetch = mockFetch; // Mocking fetch for HTTP requests
+    globalThis.fetch = mockFetch as typeof fetch; // Mocking fetch for HTTP requests
 
     // Mock express server
     mockExpress = {
@@ -49,8 +60,8 @@ describe("Bot Class Tests", () => {
     expect(bot.bot.port).toBe(mockOptions.port);
     expect(bot.bot.endpoint).toBe(mockOptions.endpoint);
     expect(bot.bot.version).toBe(mockOptions.version);
-    expect(bot.accessToken).toBe(mockOptions.accessToken);
-    expect(bot.verifyToken).toBe(mockOptions.verifyToken);
+    expect(bot.getAccessToken()).toBe(mockOptions.accessToken);
+    expect(bot.getVerifyToken()).toBe(mockOptions.verifyToken);
   });
 
   it("should throw an error if accessToken is missing", () => {
@@ -74,7 +85,7 @@ describe("Bot Class Tests", () => {
       query: {
         "hub.mode": "invalid_mode",
         "hub.challenge": "1234",
-        "hub.verify_token": bot.verifyToken,
+        "hub.verify_token": bot.getVerifyToken(),
       },
     } as unknown as express.Request;
 
@@ -237,6 +248,7 @@ describe("Bot Class Tests", () => {
   });
 
   it("should throw an error when sending an attachment with invalid type", async () => {
+    // biome-ignore lint/suspicious/noExplicitAny: Testing error handling requires bypassing type safety
     const invalidType = "invalid_type" as any; // force an invalid type
     await expect(
       bot.sendAttachment("123", invalidType, "http://example.com/file"),

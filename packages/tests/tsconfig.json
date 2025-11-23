@@ -1,0 +1,12 @@
+{
+  "extends": "@repo/typescript-config/base.json",
+  "compilerOptions": {
+    "target": "ESNext",
+    "module": "ESNext",
+    "moduleResolution": "Bundler",
+    "lib": ["ESNext"],
+    "types": ["vitest/globals"]
+  },
+  "include": ["__tests__/**/*.ts", "vite.config.mts"],
+  "exclude": ["node_modules"]
+}
