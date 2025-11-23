@@ -36,27 +36,27 @@ import {
   GenericElement,
   URLButton,
   PostbackButton,
-} from '@pyyupsk/messenger-webhooks';
+} from "@pyyupsk/messenger-webhooks";
 
 const bot = new Bot({
-  accessToken: process.env.ACCESS_TOKEN || '',
-  verifyToken: process.env.VERIFY_TOKEN || '',
+  accessToken: process.env.ACCESS_TOKEN || "",
+  verifyToken: process.env.VERIFY_TOKEN || "",
 });
 
-const element1 = new GenericElement('Product 1')
-  .setSubtitle('Best product ever!')
-  .setImageUrl('https://example.com/image1.jpg')
+const element1 = new GenericElement("Product 1")
+  .setSubtitle("Best product ever!")
+  .setImageUrl("https://example.com/image1.jpg")
   .addButtons([
-    new URLButton('View Details', 'https://example.com/product1'),
-    new PostbackButton('Buy Now', 'BUY_PRODUCT_1'),
+    new URLButton("View Details", "https://example.com/product1"),
+    new PostbackButton("Buy Now", "BUY_PRODUCT_1"),
   ]);
 
-const element2 = new GenericElement('Product 2')
-  .setSubtitle('Another great product!')
-  .setImageUrl('https://example.com/image2.jpg')
+const element2 = new GenericElement("Product 2")
+  .setSubtitle("Another great product!")
+  .setImageUrl("https://example.com/image2.jpg")
   .addButtons([
-    new URLButton('View Details', 'https://example.com/product2'),
-    new PostbackButton('Buy Now', 'BUY_PRODUCT_2'),
+    new URLButton("View Details", "https://example.com/product2"),
+    new PostbackButton("Buy Now", "BUY_PRODUCT_2"),
   ]);
 
 const genericTemplate = new GenericTemplate({ sharable: true }).addElement([
@@ -94,31 +94,31 @@ Here’s how you can use different types of content with the `sendMessage` metho
 #### Text Messages
 
 ```typescript
-bot.sendTextMessage(recipientId, 'Hello, how can I help you today?');
+bot.sendTextMessage(recipientId, "Hello, how can I help you today?");
 ```
 
 #### Images
 
 ```typescript
-bot.sendAttachment(recipientId, 'image', 'https://example.com/image.jpg');
+bot.sendAttachment(recipientId, "image", "https://example.com/image.jpg");
 ```
 
 #### Audio
 
 ```typescript
-bot.sendAttachment(recipientId, 'audio', 'https://example.com/audio.mp3');
+bot.sendAttachment(recipientId, "audio", "https://example.com/audio.mp3");
 ```
 
 #### Videos
 
 ```typescript
-bot.sendAttachment(recipientId, 'video', 'https://example.com/video.mp4');
+bot.sendAttachment(recipientId, "video", "https://example.com/video.mp4");
 ```
 
 #### Files
 
 ```typescript
-bot.sendAttachment(recipientId, 'file', 'https://example.com/file.pdf');
+bot.sendAttachment(recipientId, "file", "https://example.com/file.pdf");
 ```
 
 #### Templates

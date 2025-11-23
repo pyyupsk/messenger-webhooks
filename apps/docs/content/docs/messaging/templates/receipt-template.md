@@ -101,35 +101,35 @@ address information.
 ## Example Usage
 
 ```typescript
-import { ReceiptTemplate, ReceiptElement } from '@pyyupsk/messenger-webhooks';
+import { ReceiptTemplate, ReceiptElement } from "@pyyupsk/messenger-webhooks";
 
-const item1 = new ReceiptElement('Laptop', 999.99)
+const item1 = new ReceiptElement("Laptop", 999.99)
   .setQuantity(1)
-  .setCurrency('USD')
-  .setImageUrl('https://example.com/laptop.jpg');
+  .setCurrency("USD")
+  .setImageUrl("https://example.com/laptop.jpg");
 
-const item2 = new ReceiptElement('Mouse', 25.0)
+const item2 = new ReceiptElement("Mouse", 25.0)
   .setQuantity(2)
-  .setCurrency('USD');
+  .setCurrency("USD");
 
 const receipt = new ReceiptTemplate(
-  'John Doe',
-  '1234567890',
-  'USD',
-  'Credit Card',
+  "John Doe",
+  "1234567890",
+  "USD",
+  "Credit Card",
   {
     sharable: true,
   },
 )
-  .setMerchantName('Tech Store')
-  .setOrderUrl('https://example.com/order/1234567890')
+  .setMerchantName("Tech Store")
+  .setOrderUrl("https://example.com/order/1234567890")
   .setTimestamp(Date.now())
   .setAddress({
-    street_1: '123 Tech Lane',
-    city: 'Tech City',
-    postal_code: '12345',
-    state: 'TS',
-    country: 'Techland',
+    street_1: "123 Tech Lane",
+    city: "Tech City",
+    postal_code: "12345",
+    state: "TS",
+    country: "Techland",
   })
   .setSummary({
     subtotal: 1049.99,
@@ -137,7 +137,7 @@ const receipt = new ReceiptTemplate(
     total_tax: 0,
     total_cost: 1049.99,
   })
-  .addAdjustment([{ name: 'Discount', amount: -50.0 }])
+  .addAdjustment([{ name: "Discount", amount: -50.0 }])
   .addElement([item1, item2]);
 ```
 

@@ -19,11 +19,9 @@ them to take specific actions.
 
 - **constructor(text: string)**: Initializes a new `ButtonTemplate` with the
   specified text.
-
   - Throws an error if the text exceeds 640 characters.
 
 - **addButtons(buttons: Button[])**: Adds buttons to the template.
-
   - Throws an error if adding the buttons exceeds the maximum limit of 3
     buttons.
 
@@ -33,13 +31,13 @@ them to take specific actions.
 ## Example Usage
 
 ```typescript
-import { ButtonTemplate } from '@pyyupsk/messenger-webhooks';
-import { URLButton, PostbackButton } from '@pyyupsk/messenger-webhooks';
+import { ButtonTemplate } from "@pyyupsk/messenger-webhooks";
+import { URLButton, PostbackButton } from "@pyyupsk/messenger-webhooks";
 
-const buttonTemplate = new ButtonTemplate('Choose an option:').addButtons([
-  new URLButton('Visit Website', 'https://example.com'),
-  new PostbackButton('Confirm', 'CONFIRM_PAYLOAD'),
-  new CallButton('Call Us', '+1234567890'),
+const buttonTemplate = new ButtonTemplate("Choose an option:").addButtons([
+  new URLButton("Visit Website", "https://example.com"),
+  new PostbackButton("Confirm", "CONFIRM_PAYLOAD"),
+  new CallButton("Call Us", "+1234567890"),
 ]);
 ```
 

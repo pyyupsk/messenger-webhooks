@@ -1,7 +1,6 @@
 ---
 title: Events
-description:
-  Manage Message, Postback, Quick Reply, and more events with
+description: Manage Message, Postback, Quick Reply, and more events with
   @pyyupsk/messenger-webhooks library.
 ---
 
@@ -155,34 +154,34 @@ import {
   QuickReplyEvent,
   TemplateEvent,
   ReferralsEvent,
-} from '@pyyupsk/messenger-webhooks';
+} from "@pyyupsk/messenger-webhooks";
 
 const bot = new Bot({
-  accessToken: process.env.ACCESS_TOKEN || '',
-  verifyToken: process.env.VERIFY_TOKEN || '',
+  accessToken: process.env.ACCESS_TOKEN || "",
+  verifyToken: process.env.VERIFY_TOKEN || "",
 });
 
-bot.on('message', async (event: MessageEvent) => {
+bot.on("message", async (event: MessageEvent) => {
   const { sender, message } = event;
   // Handle the message event
 });
 
-bot.on('postback', async (event: PostbackEvent) => {
+bot.on("postback", async (event: PostbackEvent) => {
   const { sender, postback } = event;
   // Handle the postback event
 });
 
-bot.on('quick_reply', async (event: QuickReplyEvent) => {
+bot.on("quick_reply", async (event: QuickReplyEvent) => {
   const { sender, message } = event;
   // Handle the quick reply event
 });
 
-bot.on('template', async (event: TemplateEvent) => {
+bot.on("template", async (event: TemplateEvent) => {
   const { sender, template } = event;
   // Handle the template event
 });
 
-bot.on('referral', async (event: ReferralsEvent) => {
+bot.on("referral", async (event: ReferralsEvent) => {
   const { sender, referral } = event;
   // Handle the referral event
 });

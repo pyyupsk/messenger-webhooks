@@ -81,14 +81,14 @@ Here’s a basic example of how to use the
 library to set up a simple chatbot:
 
 ```typescript
-import { Bot, MessageEvent } from '@pyyupsk/messenger-webhooks';
+import { Bot, MessageEvent } from "@pyyupsk/messenger-webhooks";
 
 const bot = new Bot({
-  accessToken: 'YOUR_ACCESS_TOKEN',
-  verifyToken: 'YOUR_VERIFY_TOKEN',
+  accessToken: "YOUR_ACCESS_TOKEN",
+  verifyToken: "YOUR_VERIFY_TOKEN",
 });
 
-bot.on('message', (event: MessageEvent) => {
+bot.on("message", (event: MessageEvent) => {
   const { sender, message } = event;
 
   bot.sendTextMessage(sender.id, `You wrote: ${message.text}`);
@@ -132,7 +132,7 @@ various events:
 Example:
 
 ```typescript
-bot.on('message', (event: MessageEvent) => {
+bot.on("message", (event: MessageEvent) => {
   // Handle incoming message
 });
 ```
@@ -142,7 +142,7 @@ bot.on('message', (event: MessageEvent) => {
 The `sendTextMessage` method allows you to send a text message to a user:
 
 ```typescript
-bot.sendTextMessage(senderId, 'Your message text');
+bot.sendTextMessage(senderId, "Your message text");
 ```
 
 ## 🛠️ Advanced Usage

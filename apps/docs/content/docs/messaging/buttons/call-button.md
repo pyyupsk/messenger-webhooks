@@ -1,7 +1,6 @@
 ---
 title: Call Button
-description:
-  Add Call buttons to Messenger bots to let users call your business directly.
+description: Add Call buttons to Messenger bots to let users call your business directly.
 ---
 
 The `CallButton` class creates a button that initiates a phone call when
@@ -16,7 +15,7 @@ your business directly.
 ## Example
 
 ```typescript
-const button = new CallButton('Call Us', '+1234567890');
+const button = new CallButton("Call Us", "+1234567890");
 ```
 
 ## JSON Representation

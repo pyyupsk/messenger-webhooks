@@ -14,7 +14,6 @@ specified city.
    ```
 
 3. Set up your environment variables:
-
    - `ACCESS_TOKEN`: Your Facebook Page Access Token
    - `VERIFY_TOKEN`: Your Webhook Verify Token
 

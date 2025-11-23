@@ -27,11 +27,9 @@ buttons.
 
 - **constructor(title: string)**: Initializes a new `GenericElement` with the
   specified title.
-
   - Throws an error if the title exceeds 80 characters.
 
 - **setSubtitle(subtitle: string)**: Sets the subtitle of the element.
-
   - Throws an error if the subtitle exceeds 80 characters.
 
 - **setImageUrl(image_url: string)**: Sets the image URL for the element.
@@ -40,7 +38,6 @@ buttons.
   webview_height_ratio: string })**: Sets the default action for the element.
 
 - **addButtons(buttons: Button[])**: Adds buttons to the element.
-
   - Throws an error if adding the buttons exceeds the maximum of 3 buttons.
 
 - **toJSON()**: Converts the `GenericElement` into a JSON object for use in the
@@ -60,7 +57,6 @@ buttons.
 - **constructor(options: { sharable?: boolean })**: Initializes a new
   `GenericTemplate` with optional sharability.
 - **addElement(element: GenericElement[])**: Adds elements to the template.
-
   - Throws an error if adding the elements exceeds the maximum of 10 elements.
 
 - **toJSON()**: Converts the `GenericTemplate` into a JSON object suitable for
@@ -69,23 +65,23 @@ buttons.
 ## Example Usage
 
 ```typescript
-import { GenericTemplate, GenericElement } from '@pyyupsk/messenger-webhooks';
-import { URLButton, PostbackButton } from '@pyyupsk/messenger-webhooks';
+import { GenericTemplate, GenericElement } from "@pyyupsk/messenger-webhooks";
+import { URLButton, PostbackButton } from "@pyyupsk/messenger-webhooks";
 
-const element1 = new GenericElement('Product 1')
-  .setSubtitle('Best product ever!')
-  .setImageUrl('https://example.com/image1.jpg')
+const element1 = new GenericElement("Product 1")
+  .setSubtitle("Best product ever!")
+  .setImageUrl("https://example.com/image1.jpg")
   .addButtons([
-    new URLButton('View Details', 'https://example.com/product1'),
-    new PostbackButton('Buy Now', 'BUY_PRODUCT_1'),
+    new URLButton("View Details", "https://example.com/product1"),
+    new PostbackButton("Buy Now", "BUY_PRODUCT_1"),
   ]);
 
-const element2 = new GenericElement('Product 2')
-  .setSubtitle('Another great product!')
-  .setImageUrl('https://example.com/image2.jpg')
+const element2 = new GenericElement("Product 2")
+  .setSubtitle("Another great product!")
+  .setImageUrl("https://example.com/image2.jpg")
   .addButtons([
-    new URLButton('View Details', 'https://example.com/product2'),
-    new PostbackButton('Buy Now', 'BUY_PRODUCT_2'),
+    new URLButton("View Details", "https://example.com/product2"),
+    new PostbackButton("Buy Now", "BUY_PRODUCT_2"),
   ]);
 
 const genericTemplate = new GenericTemplate({ sharable: true }).addElement([

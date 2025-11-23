@@ -5,8 +5,6 @@ description:
   Node.js.
 ---
 
-import { Callout } from 'fumadocs-ui/components/callout';
-
 ## Overview
 
 <Callout title="Warning" type="warn">
@@ -63,21 +61,21 @@ npm install @pyyupsk/messenger-webhooks
 Here’s a simple example of how to use the library:
 
 ```typescript title="index.ts"
-import { Bot, MessageEvent } from '@pyyupsk/messenger-webhooks';
-import 'dotenv/config';
+import { Bot, MessageEvent } from "@pyyupsk/messenger-webhooks";
+import "dotenv/config";
 
 const bot = new Bot({
-  accessToken: process.env.ACCESS_TOKEN || '',
-  verifyToken: process.env.VERIFY_TOKEN || '',
+  accessToken: process.env.ACCESS_TOKEN || "",
+  verifyToken: process.env.VERIFY_TOKEN || "",
 });
 
-bot.on('message', async (event: MessageEvent) => {
+bot.on("message", async (event: MessageEvent) => {
   const { sender, message } = event;
 
   if (message.text) {
     await bot.sendTextMessage(sender.id, `You said: ${message.text}`);
   } else {
-    await bot.sendTextMessage(sender.id, 'Please send a text message.');
+    await bot.sendTextMessage(sender.id, "Please send a text message.");
   }
 });
 

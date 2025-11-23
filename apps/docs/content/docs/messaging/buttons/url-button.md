@@ -1,7 +1,6 @@
 ---
 title: URL Button
-description:
-  Create URL buttons in Messenger bots to open web pages with
+description: Create URL buttons in Messenger bots to open web pages with
   @pyyupsk/messenger-webhooks library.
 ---
 
@@ -24,11 +23,11 @@ button is useful for directing users to external resources or websites.
 ## Example
 
 ```typescript
-const button = new URLButton('Visit Website', 'https://example.com')
-  .setWebviewHeightRatio('tall')
+const button = new URLButton("Visit Website", "https://example.com")
+  .setWebviewHeightRatio("tall")
   .setMessengerExtensions(true)
-  .setFallbackUrl('https://fallback.example.com')
-  .setWebviewShareButton('show');
+  .setFallbackUrl("https://fallback.example.com")
+  .setWebviewShareButton("show");
 ```
 
 ## JSON Representation

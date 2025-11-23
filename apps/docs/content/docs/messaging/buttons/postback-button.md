@@ -16,7 +16,7 @@ when clicked. This is useful for triggering server-side events or actions.
 ## Example
 
 ```typescript
-const button = new PostbackButton('Confirm', 'CONFIRM_PAYLOAD');
+const button = new PostbackButton("Confirm", "CONFIRM_PAYLOAD");
 ```
 
 ## JSON Representation

@@ -1,7 +1,6 @@
 ---
 title: Quick Replies
-description:
-  Learn to create interactive Quick Replies for your Messenger bot with ease.
+description: Learn to create interactive Quick Replies for your Messenger bot with ease.
 ---
 
 The `QuickReplies` template consists of a main text prompt and a list of
@@ -63,17 +62,17 @@ and an optional image URL.
 ## Example Usage
 
 ```typescript
-import { QuickReplies, QuickReply } from '@pyyupsk/messenger-webhooks';
+import { QuickReplies, QuickReply } from "@pyyupsk/messenger-webhooks";
 
-const quickReply1 = new QuickReply('Yes')
-  .setPayload('YES_PAYLOAD')
-  .setImageUrl('https://example.com/yes-image.jpg');
+const quickReply1 = new QuickReply("Yes")
+  .setPayload("YES_PAYLOAD")
+  .setImageUrl("https://example.com/yes-image.jpg");
 
-const quickReply2 = new QuickReply('No')
-  .setPayload('NO_PAYLOAD')
-  .setImageUrl('https://example.com/no-image.jpg');
+const quickReply2 = new QuickReply("No")
+  .setPayload("NO_PAYLOAD")
+  .setImageUrl("https://example.com/no-image.jpg");
 
-const quickReplies = new QuickReplies('Do you like our service?').addQuickReply(
+const quickReplies = new QuickReplies("Do you like our service?").addQuickReply(
   [quickReply1, quickReply2],
 );
 ```

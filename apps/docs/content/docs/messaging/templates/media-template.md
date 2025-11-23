@@ -1,7 +1,6 @@
 ---
 title: Media Template
-description:
-  Enhance user interaction with media-rich templates featuring images or videos.
+description: Enhance user interaction with media-rich templates featuring images or videos.
 ---
 
 The `MediaTemplate` consists of a series of `MediaElement` instances. Each
@@ -27,15 +26,12 @@ URL, and up to three interactive buttons.
 
 - **setAttachmentId(attachment_id: string)**: Sets the attachment ID for the
   media.
-
   - Throws an error if both `attachment_id` and `url` are set.
 
 - **setUrl(url: string)**: Sets the URL for the media.
-
   - Throws an error if both `attachment_id` and `url` are set.
 
 - **addButtons(buttons: Button[])**: Adds buttons to the media element.
-
   - Throws an error if adding the buttons exceeds the maximum of 3 buttons.
 
 - **toJSON()**: Converts the `MediaElement` into a JSON object for use in the
@@ -63,14 +59,14 @@ URL, and up to three interactive buttons.
 ## Example Usage
 
 ```typescript
-import { MediaTemplate, MediaElement } from '@pyyupsk/messenger-webhooks';
-import { URLButton, PostbackButton } from '@pyyupsk/messenger-webhooks';
+import { MediaTemplate, MediaElement } from "@pyyupsk/messenger-webhooks";
+import { URLButton, PostbackButton } from "@pyyupsk/messenger-webhooks";
 
-const mediaElement = new MediaElement('image')
-  .setUrl('https://example.com/image1.jpg')
+const mediaElement = new MediaElement("image")
+  .setUrl("https://example.com/image1.jpg")
   .addButtons([
-    new URLButton('Learn More', 'https://example.com'),
-    new PostbackButton('Contact Us', 'CONTACT_US'),
+    new URLButton("Learn More", "https://example.com"),
+    new PostbackButton("Contact Us", "CONTACT_US"),
   ]);
 
 const mediaTemplate = new MediaTemplate({ sharable: true }).addElement(
