@@ -4,6 +4,7 @@
 
 import type { APIVersion } from "../constants";
 
+export type { APIVersion };
 export * from "./Events";
 export * from "./Webhook";
 

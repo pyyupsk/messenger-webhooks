@@ -1,4 +1,4 @@
-import { Bot, logger } from "@pyyupsk/messenger-webhooks";
+import { type APIVersion, Bot, logger } from "@pyyupsk/messenger-webhooks";
 import type express from "express";
 import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 
@@ -29,7 +29,7 @@ describe("Bot Class Tests", () => {
     verifyToken: "mockVerifyToken",
     port: 8080,
     endpoint: "/webhook",
-    version: "v19.0",
+    version: "v19.0" as APIVersion,
   };
 
   beforeEach(() => {
