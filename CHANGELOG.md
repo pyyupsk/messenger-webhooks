@@ -22,9 +22,20 @@
     - Added `is_guest_user` to WebhookEvent sender
   - Improved type accuracy (e.g., `is_echo` now required for EchoesEvent)
   - Added version-specific documentation with @since annotations
+- **Package Manager Migration**: Migrated from pnpm to bun
+  - Faster dependency installation and script execution
+  - Updated CI/CD workflows to use bun
+- **Documentation Improvements**:
+  - Upgraded fumadocs to v16 with restructured documentation app
+  - Added package manager tabs with remarkNpm plugin
+  - Added file tree visualization with remarkMdxFiles plugin
+  - Added page actions and root page redirect
 - **Code Quality Improvements**:
-  - Migrated to Biome for linting (from ESLint)
+  - Migrated from ESLint/Prettier to Biome for linting and formatting
+  - Added eslint-plugin-jsdoc for JSDoc validation
   - Added typecheck script for better type safety
+  - Migrated from Husky to Lefthook for git hooks
+  - Moved test files to `__tests__` directory
   - Improved code formatting consistency
   - Enhanced messaging classes with compatibility notes
 
