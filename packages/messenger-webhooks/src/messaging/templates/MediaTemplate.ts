@@ -5,6 +5,7 @@ type MediaType = "image" | "video";
 /**
  * Represents an element in a MediaTemplate.
  * Backward compatible across API v19.0 - v24.0 (no schema changes)
+ *
  * @see https://developers.facebook.com/docs/messenger-platform/reference/templates/media
  */
 export class MediaElement {
@@ -15,6 +16,7 @@ export class MediaElement {
 
   /**
    * Creates a new MediaElement.
+   *
    * @param media_type - The type of media (image or video).
    */
   constructor(media_type: MediaType) {
@@ -23,6 +25,7 @@ export class MediaElement {
 
   /**
    * Sets the attachment ID for the MediaElement.
+   *
    * @param attachment_id - The attachment ID to set.
    * @returns The current instance of MediaElement.
    * @throws Error if both attachment_id and url are set.
@@ -38,6 +41,7 @@ export class MediaElement {
 
   /**
    * Sets the URL for the MediaElement.
+   *
    * @param url - The URL to set.
    * @returns The current instance of MediaElement.
    * @throws Error if both attachment_id and url are set.
@@ -53,6 +57,7 @@ export class MediaElement {
 
   /**
    * Adds buttons to the MediaElement. A maximum of 3 buttons can be added.
+   *
    * @param buttons - An array of Button objects to add.
    * @returns The current instance of MediaElement.
    * @throws Error if adding the buttons exceeds the maximum of 3 buttons.
@@ -67,6 +72,7 @@ export class MediaElement {
 
   /**
    * Converts the MediaElement into a JSON object.
+   *
    * @returns The MediaElement as a JSON object.
    */
   toJSON(): object {
@@ -82,6 +88,7 @@ export class MediaElement {
 /**
  * Represents a MediaTemplate for sharing images or videos.
  * Backward compatible across API v19.0 - v24.0 (no schema changes)
+ *
  * @see https://developers.facebook.com/docs/messenger-platform/reference/templates/media
  */
 export class MediaTemplate {
@@ -90,6 +97,7 @@ export class MediaTemplate {
 
   /**
    * Creates a new MediaTemplate.
+   *
    * @param options - The options for creating the MediaTemplate.
    * @param options.sharable - Whether the template is sharable. Defaults to false.
    */
@@ -99,6 +107,7 @@ export class MediaTemplate {
 
   /**
    * Adds an element to the MediaTemplate.
+   *
    * @param element - The MediaElement to add.
    * @returns The current instance of MediaTemplate.
    */
@@ -109,6 +118,7 @@ export class MediaTemplate {
 
   /**
    * Converts the MediaTemplate into a JSON object.
+   *
    * @returns The MediaTemplate as a JSON object.
    */
   toJSON(): object {

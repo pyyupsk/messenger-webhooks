@@ -1,6 +1,7 @@
 /**
  * Represents a Postback button that triggers an event to the server when clicked.
  * Backward compatible across API v19.0 - v24.0 (no schema changes)
+ *
  * @see https://developers.facebook.com/docs/messenger-platform/reference/buttons/postback
  */
 export class PostbackButton {
@@ -9,6 +10,7 @@ export class PostbackButton {
 
   /**
    * Creates a new PostbackButton.
+   *
    * @param title - The title of the button.
    * @param payload - The payload to send to the server when clicked.
    */
@@ -23,6 +25,7 @@ export class PostbackButton {
 
   /**
    * Converts the PostbackButton object to a JSON representation.
+   *
    * @returns The JSON representation of the PostbackButton.
    */
   toJSON(): object {

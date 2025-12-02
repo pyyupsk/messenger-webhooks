@@ -3,6 +3,7 @@ import type { Button } from "@/messaging";
 /**
  * Represents an element in a GenericTemplate carousel.
  * Backward compatible across API v19.0 - v24.0 (enhanced validation for default_action in v20+)
+ *
  * @see https://developers.facebook.com/docs/messenger-platform/reference/templates/generic
  */
 export class GenericElement {
@@ -18,6 +19,7 @@ export class GenericElement {
 
   /**
    * Creates a new GenericElement.
+   *
    * @param title - The title of the element. Must be 80 characters or less.
    * @throws Error if the title exceeds 80 characters.
    */
@@ -31,6 +33,7 @@ export class GenericElement {
 
   /**
    * Sets the subtitle of the GenericElement.
+   *
    * @param subtitle - The subtitle to set. Must be 80 characters or less.
    * @returns The current instance of GenericElement.
    * @throws Error if the subtitle exceeds 80 characters.
@@ -45,6 +48,7 @@ export class GenericElement {
 
   /**
    * Sets the image URL of the GenericElement.
+   *
    * @param image_url - The image URL to set.
    * @returns The current instance of GenericElement.
    */
@@ -55,7 +59,11 @@ export class GenericElement {
 
   /**
    * Sets the default action of the GenericElement.
+   *
    * @param default_action - The default action object to set.
+   * @param default_action.type - The action type (e.g., "web_url").
+   * @param default_action.url - The URL to open.
+   * @param default_action.webview_height_ratio - The webview height ratio.
    * @returns The current instance of GenericElement.
    */
   setDefaultAction(default_action: {
@@ -69,6 +77,7 @@ export class GenericElement {
 
   /**
    * Adds buttons to the GenericElement. A maximum of 3 buttons can be added.
+   *
    * @param buttons - An array of Button objects to add.
    * @returns The current instance of GenericElement.
    * @throws Error if adding the buttons exceeds the maximum of 3 buttons.
@@ -83,6 +92,7 @@ export class GenericElement {
 
   /**
    * Converts the GenericElement into a JSON object.
+   *
    * @returns The GenericElement as a JSON object.
    */
   toJSON(): object {
@@ -99,6 +109,7 @@ export class GenericElement {
 /**
  * Represents a GenericTemplate for creating carousel-style messages with up to 10 elements.
  * Backward compatible across API v19.0 - v24.0 (no schema changes)
+ *
  * @see https://developers.facebook.com/docs/messenger-platform/reference/templates/generic
  */
 export class GenericTemplate {
@@ -107,6 +118,7 @@ export class GenericTemplate {
 
   /**
    * Creates a new GenericTemplate.
+   *
    * @param options - The options for creating the GenericTemplate.
    * @param options.sharable - Whether the template is sharable. Defaults to false.
    */
@@ -117,6 +129,7 @@ export class GenericTemplate {
 
   /**
    * Adds an element to the GenericTemplate. A maximum of 10 elements can be added.
+   *
    * @param element - The GenericElement to add.
    * @returns The current instance of GenericTemplate.
    * @throws Error if adding the element exceeds the maximum of 10 elements.
@@ -131,6 +144,7 @@ export class GenericTemplate {
 
   /**
    * Converts the GenericTemplate into a JSON object.
+   *
    * @returns The GenericTemplate as a JSON object.
    */
   toJSON(): object {

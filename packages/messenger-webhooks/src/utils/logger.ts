@@ -8,10 +8,13 @@ export const colors = {
 
 const prefix = `${colors.gray}[bot]${colors.reset}`;
 
-/** A logger utility for logging messages with different severity levels. */
+/**
+ * A logger utility for logging messages with different severity levels.
+ */
 export const logger = {
   /**
    * Logs a general message.
+   *
    * @param args - The message or values to log.
    */
   log: (...args: unknown[]): void => {
@@ -20,6 +23,7 @@ export const logger = {
 
   /**
    * Logs an informational message, with a blue `[info]` tag.
+   *
    * @param args - The message or values to log.
    */
   info: (...args: unknown[]): void => {
@@ -28,6 +32,7 @@ export const logger = {
 
   /**
    * Logs a warning message, with a yellow `[warn]` tag.
+   *
    * @param args - The message or values to log.
    */
   warn: (...args: unknown[]): void => {
@@ -36,6 +41,7 @@ export const logger = {
 
   /**
    * Logs an error message, with a red `[error]` tag, and exits the process.
+   *
    * @param args - The message or values to log.
    */
   error: (...args: unknown[]): void => {

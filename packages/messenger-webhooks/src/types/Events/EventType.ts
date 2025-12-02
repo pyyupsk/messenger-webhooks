@@ -1,5 +1,6 @@
 /**
  * Supported webhook event types across API v19.0 - v24.0
+ *
  * @see https://developers.facebook.com/docs/messenger-platform/reference/webhook-events
  */
 export type EventType =

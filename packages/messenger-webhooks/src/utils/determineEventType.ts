@@ -25,6 +25,7 @@ type Event =
 /**
  * Determines the event type based on the structure of the event object.
  * Updated for API v19.0 - v24.0 compatibility
+ *
  * @param event - The event object to evaluate.
  * @returns The event type or 'unknown' if none match.
  * @see https://developers.facebook.com/docs/messenger-platform/reference/webhook-events

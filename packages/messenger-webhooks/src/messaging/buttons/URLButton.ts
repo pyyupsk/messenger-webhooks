@@ -1,6 +1,7 @@
 /**
  * Represents a URL button that opens a web page when clicked.
  * Backward compatible across API v19.0 - v24.0 (enhanced HTTPS validation in v20+)
+ *
  * @see https://developers.facebook.com/docs/messenger-platform/reference/buttons/url
  */
 export class URLButton {
@@ -13,6 +14,7 @@ export class URLButton {
 
   /**
    * Creates a new URLButton.
+   *
    * @param title - The title of the button.
    * @param url - The URL to open when the button is clicked.
    */
@@ -27,6 +29,7 @@ export class URLButton {
 
   /**
    * Sets the height ratio for the webview.
+   *
    * @param webview_height_ratio - The height ratio of the webview.
    * @returns The current instance of the URLButton.
    */
@@ -39,6 +42,7 @@ export class URLButton {
 
   /**
    * Enables or disables Messenger extensions.
+   *
    * @param messenger_extensions - Whether to enable Messenger extensions.
    * @returns The current instance of the URLButton.
    */
@@ -49,6 +53,7 @@ export class URLButton {
 
   /**
    * Sets a fallback URL if Messenger extensions are not supported.
+   *
    * @param fallback_url - The fallback URL.
    * @returns The current instance of the URLButton.
    */
@@ -59,6 +64,7 @@ export class URLButton {
 
   /**
    * Hides or shows the webview share button.
+   *
    * @param webview_share_button - Whether to hide or show the share button.
    * @returns The current instance of the URLButton.
    */
@@ -69,6 +75,7 @@ export class URLButton {
 
   /**
    * Converts the URLButton object to a JSON representation.
+   *
    * @returns The JSON representation of the URLButton.
    */
   toJSON(): object {

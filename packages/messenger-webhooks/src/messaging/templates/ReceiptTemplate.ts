@@ -22,6 +22,7 @@ type Adjustment = {
 /**
  * Represents an item in a ReceiptTemplate.
  * Backward compatible across API v19.0 - v24.0 (no schema changes)
+ *
  * @see https://developers.facebook.com/docs/messenger-platform/reference/templates/receipt
  */
 export class ReceiptElement {
@@ -34,6 +35,7 @@ export class ReceiptElement {
 
   /**
    * Creates a new ReceiptElement.
+   *
    * @param title - The title of the element.
    * @param price - The price of the element.
    */
@@ -44,6 +46,7 @@ export class ReceiptElement {
 
   /**
    * Sets the subtitle of the ReceiptElement.
+   *
    * @param subtitle - The subtitle to set.
    * @returns The current instance of ReceiptElement.
    */
@@ -54,6 +57,7 @@ export class ReceiptElement {
 
   /**
    * Sets the quantity of the ReceiptElement.
+   *
    * @param quantity - The quantity to set.
    * @returns The current instance of ReceiptElement.
    */
@@ -64,6 +68,7 @@ export class ReceiptElement {
 
   /**
    * Sets the currency of the ReceiptElement.
+   *
    * @param currency - The currency to set.
    * @returns The current instance of ReceiptElement.
    */
@@ -74,6 +79,7 @@ export class ReceiptElement {
 
   /**
    * Sets the image URL of the ReceiptElement.
+   *
    * @param imageUrl - The image URL to set.
    * @returns The current instance of ReceiptElement.
    */
@@ -84,6 +90,7 @@ export class ReceiptElement {
 
   /**
    * Converts the ReceiptElement into a JSON object.
+   *
    * @returns The ReceiptElement as a JSON object.
    */
   toJSON(): object {
@@ -101,6 +108,7 @@ export class ReceiptElement {
 /**
  * Represents a ReceiptTemplate for displaying order receipts.
  * Backward compatible across API v19.0 - v24.0 (enhanced currency validation in v20+)
+ *
  * @see https://developers.facebook.com/docs/messenger-platform/reference/templates/receipt
  */
 export class ReceiptTemplate {
@@ -119,6 +127,7 @@ export class ReceiptTemplate {
 
   /**
    * Creates a new ReceiptTemplate.
+   *
    * @param recipient_name - The name of the recipient.
    * @param order_number - The order number.
    * @param currency - The currency used.
@@ -144,6 +153,7 @@ export class ReceiptTemplate {
 
   /**
    * Sets the merchant name for the ReceiptTemplate.
+   *
    * @param merchant_name - The merchant name to set.
    * @returns The current instance of ReceiptTemplate.
    */
@@ -154,6 +164,7 @@ export class ReceiptTemplate {
 
   /**
    * Sets the order URL for the ReceiptTemplate.
+   *
    * @param order_url - The order URL to set.
    * @returns The current instance of ReceiptTemplate.
    */
@@ -164,6 +175,7 @@ export class ReceiptTemplate {
 
   /**
    * Sets the timestamp for the ReceiptTemplate.
+   *
    * @param timestamp - The timestamp to set.
    * @returns The current instance of ReceiptTemplate.
    */
@@ -174,6 +186,7 @@ export class ReceiptTemplate {
 
   /**
    * Sets the address for the ReceiptTemplate.
+   *
    * @param address - The address object to set.
    * @returns The current instance of ReceiptTemplate.
    */
@@ -184,6 +197,7 @@ export class ReceiptTemplate {
 
   /**
    * Sets the summary for the ReceiptTemplate.
+   *
    * @param summary - The summary object to set.
    * @returns The current instance of ReceiptTemplate.
    */
@@ -194,6 +208,7 @@ export class ReceiptTemplate {
 
   /**
    * Adds an adjustment to the ReceiptTemplate.
+   *
    * @param adjustment - The adjustment object to add.
    * @returns The current instance of ReceiptTemplate.
    */
@@ -205,6 +220,7 @@ export class ReceiptTemplate {
 
   /**
    * Adds an element to the ReceiptTemplate. A maximum of 100 elements can be added.
+   *
    * @param element - The ReceiptElement to add.
    * @returns The current instance of ReceiptTemplate.
    * @throws Error if adding the element exceeds the maximum of 100 elements.
@@ -219,6 +235,7 @@ export class ReceiptTemplate {
 
   /**
    * Converts the ReceiptTemplate into a JSON object.
+   *
    * @returns The ReceiptTemplate as a JSON object.
    */
   toJSON(): object {

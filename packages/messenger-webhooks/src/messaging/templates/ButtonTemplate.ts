@@ -3,6 +3,7 @@ import type { Button } from "@/messaging";
 /**
  * Represents a ButtonTemplate that includes a message with up to 3 buttons.
  * Backward compatible across API v19.0 - v24.0 (no schema changes)
+ *
  * @see https://developers.facebook.com/docs/messenger-platform/reference/templates/button
  */
 export class ButtonTemplate {
@@ -11,6 +12,7 @@ export class ButtonTemplate {
 
   /**
    * Creates a new ButtonTemplate.
+   *
    * @param text - The text to display in the template. Must be 640 characters or less.
    * @throws Error if the text exceeds 640 characters.
    */
@@ -23,6 +25,7 @@ export class ButtonTemplate {
 
   /**
    * Adds buttons to the ButtonTemplate. A maximum of 3 buttons can be added.
+   *
    * @param buttons - An array of Button objects to add to the template.
    * @returns The current instance of the ButtonTemplate.
    * @throws Error if adding the buttons exceeds the maximum of 3 buttons.
@@ -37,6 +40,7 @@ export class ButtonTemplate {
 
   /**
    * Converts the ButtonTemplate into the JSON format required for sending the template in a messaging platform.
+   *
    * @returns The ButtonTemplate in the required JSON format.
    */
   toJSON(): object {

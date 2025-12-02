@@ -5,13 +5,17 @@ import { DEFAULT_API_VERSION, GRAPH_URL } from "@/constants";
 import type { BotConfig, EventType } from "@/types";
 import { colors, determineEventType, logger } from "@/utils";
 
-/** Represents a Bot that integrates with the Facebook Messenger API. */
+/**
+ * Represents a Bot that integrates with the Facebook Messenger API.
+ */
 export class Bot extends EventEmitter {
   private readonly server: Express;
   private readonly accessToken: string;
   private readonly verifyToken: string;
 
-  /** Public bot configuration. */
+  /**
+   * Public bot configuration.
+   */
   public bot: {
     id: string;
     name: string;
@@ -22,6 +26,7 @@ export class Bot extends EventEmitter {
 
   /**
    * Creates an instance of Bot.
+   *
    * @param config - Configuration options for the Bot.
    * @see https://developers.facebook.com/docs/messenger-platform/
    */
@@ -114,6 +119,7 @@ export class Bot extends EventEmitter {
 
   /**
    * Sends an HTTP request to the Facebook Graph API.
+   *
    * @template T - The type of the response data.
    * @param method - The HTTP method.
    * @param endpoint - The API endpoint.
@@ -163,6 +169,7 @@ export class Bot extends EventEmitter {
 
   /**
    * Sends a message to a recipient.
+   *
    * @param recipientId - The ID of the recipient.
    * @param message - The message object to send.
    */
@@ -178,6 +185,7 @@ export class Bot extends EventEmitter {
 
   /**
    * Sends a text message to a recipient.
+   *
    * @param recipientId - The ID of the recipient.
    * @param message - The text message to send.
    * @throws Will throw an error if the message exceeds 2000 characters.
@@ -197,6 +205,7 @@ export class Bot extends EventEmitter {
 
   /**
    * Sends an attachment (audio, file, image, video, or template) to a recipient.
+   *
    * @param recipientId - The ID of the recipient.
    * @param type - The type of the attachment.
    * @param url - The URL of the attachment.
@@ -224,6 +233,7 @@ export class Bot extends EventEmitter {
 
   /**
    * Sets the typing status of the recipient.
+   *
    * @param recipientId - The ID of the recipient.
    * @param isTyping - Whether the recipient is typing.
    */
