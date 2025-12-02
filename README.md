@@ -120,7 +120,7 @@ The `Bot` class is initialized with an object containing the following options:
   `/webhook`.
 - `version` **(optional)**: The version of the
   [Facebook Graph API](https://developers.facebook.com/docs/graph-api/changelog#available-graph-api-versions)
-  to use. Defaults to `v19.0`.
+  to use. Defaults to `v24.0`. Supports v19.0 through v24.0.
 
 ### Event Handling
 
