@@ -12,7 +12,9 @@ import { LLMCopyButton, ViewOptions } from "@/components/page-actions";
 import { getPageImage, source } from "@/lib/source";
 import { getMDXComponents } from "@/mdx-components";
 
-export default async function Page(props: PageProps<"/docs/[[...slug]]">) {
+type Props = { params: Promise<{ slug?: string[] }> };
+
+export default async function Page(props: Props) {
   const params = await props.params;
   const page = source.getPage(params.slug);
   if (!page) notFound();
@@ -61,7 +63,7 @@ export async function generateStaticParams() {
 }
 
 export async function generateMetadata(
-  props: PageProps<"/docs/[[...slug]]">,
+  props: Props,
 ): Promise<Metadata> {
   const params = await props.params;
   const page = source.getPage(params.slug);
