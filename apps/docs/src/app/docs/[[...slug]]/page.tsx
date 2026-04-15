@@ -12,7 +12,7 @@ import { LLMCopyButton, ViewOptions } from "@/components/page-actions";
 import { getPageImage, source } from "@/lib/source";
 import { getMDXComponents } from "@/mdx-components";
 
-type Props = { params: Promise<{ slug?: string[] }> };
+type Props = Readonly<{ params: Promise<{ slug?: string[] }> }>;
 
 export default async function Page(props: Props) {
   const params = await props.params;
